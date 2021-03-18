@@ -1,4 +1,28 @@
-"description": "filling out this field to avoid warnings",
-"repository": "not publishing",
-"readme": "not publishing",
-"license": "not publishing",
+{
+    "name": "freecodecamp",
+    "version": "1.0.0",
+    "description": "Code snippets from FreeCodeCamp",
+    "main": "index.js",
+    "dependencies": {
+        "prettier": "^2.2.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.22.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/c0deblack/freecodecamp.git"
+    },
+    "keywords": [
+        "fcc"
+    ],
+    "author": "c0deblack",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/c0deblack/freecodecamp/issues"
+    },
+    "homepage": "https://github.com/c0deblack/freecodecamp#readme"
+}

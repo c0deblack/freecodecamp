@@ -1,7 +1,6 @@
 function House(numBedrooms) {
-  this.numBedrooms = numBedrooms;
+    this.numBedrooms = numBedrooms
 }
 
-
-let myHouse = new House(4);
-console.log(myHouse instanceof House);
+let myHouse = new House(4)
+console.log(myHouse instanceof House)

@@ -1,5 +1,4 @@
-
- /*
+/*
  function reverseString(str) {
   let arr = str.split("");
   let retArr = [];
@@ -20,7 +19,7 @@ function reverseString(str) {
 }
 */
 function reverseString(str) {
-  return str.split("").reverse().join("");
+    return str.split('').reverse().join('')
 }
 
-console.log(reverseString("hello"));
+console.log(reverseString('hello'))

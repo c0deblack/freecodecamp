@@ -32,14 +32,15 @@ function mutation([ target, test ], i = 0) {
 }
 */
 
-
 const mutation = (arr) => {
-  const filter = arr[1].toLowerCase().split("").filter((char) => {
-    return  !arr[0].toLowerCase().includes(char); 
-  });
-  return !filter.length > 0;
-};
+    const filter = arr[1]
+        .toLowerCase()
+        .split('')
+        .filter((char) => {
+            return !arr[0].toLowerCase().includes(char)
+        })
+    return !filter.length > 0
+}
 
-
-const log = output => console.log(output);
-log(mutation(["Mary", "Army"]));
+const log = (output) => console.log(output)
+log(mutation(['Mary', 'Army']))

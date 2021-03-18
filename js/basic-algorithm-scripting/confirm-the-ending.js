@@ -26,16 +26,15 @@ function confirmEnding(str, target) {
 
 */
 
-
 function confirmEnding(str, target) {
-  const targetLen = target.length;
-  const strLen = str.length;
+    const targetLen = target.length
+    const strLen = str.length
 
-  if (str.slice(str.length - target.length) == target) {
-    return true;
-  } else {
-    return false;
-  }
+    if (str.slice(str.length - target.length) == target) {
+        return true
+    } else {
+        return false
+    }
 }
 
-console.log(confirmEnding("Congratulation", "on"));
+console.log(confirmEnding('Congratulation', 'on'))

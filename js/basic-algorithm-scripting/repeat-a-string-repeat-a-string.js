@@ -17,15 +17,13 @@ function repeatStringNumTimes(str, num) {
 }
 */
 
-
 function repeatStringNumTimes(str, num) {
     //console.log("string is " + str);
     //console.log("num is " + num);
 
-  return (num < 1) ?  ''
-        : str + repeatStringNumTimes(str, num - 1);
+    return num < 1 ? '' : str + repeatStringNumTimes(str, num - 1)
 
- /*   
+    /*   
   if (num <= 1){
     return str;
   } else {
@@ -35,4 +33,4 @@ function repeatStringNumTimes(str, num) {
   */
 }
 
-console.log(repeatStringNumTimes("abc|", 7));
+console.log(repeatStringNumTimes('abc|', 7))

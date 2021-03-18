@@ -19,20 +19,18 @@ const squareList = (arr) => {
 
 */
 
-const squareList = arr => {
+const squareList = (arr) => {
+    return arr.reduce((retArr, realNum) => {
+        //console.log(realNum);
+        //console.log(realNum > 0);
+        //console.log(realNum % 1 == 0);
+        if (realNum > 0 && realNum % 1 == 0) {
+            retArr.push(realNum * realNum)
+            //console.log(realNum*realNum);
+        }
+        return retArr
+    }, [])
+}
 
-  return arr.reduce((retArr, realNum) => {
-    //console.log(realNum);
-    //console.log(realNum > 0);
-    //console.log(realNum % 1 == 0);
-    if ((realNum > 0) && (realNum % 1 == 0)) {
-      retArr.push(realNum * realNum);
-      //console.log(realNum*realNum);
-    }
-    return retArr; 
-  }, []);
-
-};
-
-const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
-console.log(squaredIntegers);
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2])
+console.log(squaredIntegers)

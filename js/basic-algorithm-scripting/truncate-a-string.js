@@ -14,11 +14,11 @@ function truncateString(str, num) {
 */
 
 function truncateString(str, num) {
-  if (str.length > num ) {
-    const re = new RegExp("^.{"+num+"}");
-    return str.match(re)[0] + "...";
-  }
-  return str;
+    if (str.length > num) {
+        const re = new RegExp('^.{' + num + '}')
+        return str.match(re)[0] + '...'
+    }
+    return str
 }
 
-console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+console.log(truncateString('A-tisket a-tasket A green and yellow basket', 8))

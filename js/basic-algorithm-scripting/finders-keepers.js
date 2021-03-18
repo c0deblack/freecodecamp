@@ -1,16 +1,15 @@
-
 function findElement(arr, func) {
-  console.log("starting");
-  console.log(func(arr[0]));
-  console.log(!func(arr[0]));
-  console.log(arr.length);
-  let condition = arr.length && !func(arr[0]);
-  return condition 
-    ? findElement(arr.slice(1), func)
-    :  (() => {
-      console.log(arr[0]);
-      return arr[0];
-    })();
+    console.log('starting')
+    console.log(func(arr[0]))
+    console.log(!func(arr[0]))
+    console.log(arr.length)
+    let condition = arr.length && !func(arr[0])
+    return condition
+        ? findElement(arr.slice(1), func)
+        : (() => {
+              console.log(arr[0])
+              return arr[0]
+          })()
 }
 /*
 function findElement(arr, func) {
@@ -45,4 +44,6 @@ function findElement(arr, func) {
   return undefined;
 }
 */
-console.log(findElement([1, 43, 57, 55, 67, 33, 29, 2, 3, 4], num => num % 2 === 0));
+console.log(
+    findElement([1, 43, 57, 55, 67, 33, 29, 2, 3, 4], (num) => num % 2 === 0)
+)

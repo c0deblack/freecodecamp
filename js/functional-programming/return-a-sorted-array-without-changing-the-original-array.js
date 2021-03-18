@@ -1,4 +1,4 @@
-var globalArray = [5, 6, 3, 2, 9];
+var globalArray = [5, 6, 3, 2, 9]
 /*
 function nonMutatingSort(arr) {
 
@@ -10,12 +10,9 @@ function nonMutatingSort(arr) {
 */
 
 function nonMutatingSort(arr) {
-
-  return arr.slice(0).sort((a,b) => {
-    //return a === b ? 0 : a < b ? -1 : 1;
-    return a - b;
-  })
-
-
+    return arr.slice(0).sort((a, b) => {
+        //return a === b ? 0 : a < b ? -1 : 1;
+        return a - b
+    })
 }
-console.log(nonMutatingSort(globalArray));
+console.log(nonMutatingSort(globalArray))

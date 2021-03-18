@@ -33,16 +33,15 @@ function titleCase(str) {
 }
 */
 
-
 function titleCase(str) {
-  const retStr = [];
-  const words = str.split(" ");
+    const retStr = []
+    const words = str.split(' ')
 
-  //console.log(words);
-  for (let i = 0; i < words.length; i++) {
-    retStr.push(words[i][0].toUpperCase() + words[i].slice(1).toLowerCase());
-  }
-  return retStr.join(" ");
+    //console.log(words);
+    for (let i = 0; i < words.length; i++) {
+        retStr.push(words[i][0].toUpperCase() + words[i].slice(1).toLowerCase())
+    }
+    return retStr.join(' ')
 }
 
-console.log(titleCase("I'm a little tea pot"));
+console.log(titleCase("I'm a little tea pot"))

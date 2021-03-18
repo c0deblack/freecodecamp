@@ -1,5 +1,5 @@
 // The global variable
-var s = [23, 65, 98, 5];
+var s = [23, 65, 98, 5]
 /*
 Array.prototype.myFilter = function(callback) {
   var newArray = [];
@@ -14,17 +14,17 @@ Array.prototype.myFilter = function(callback) {
 };
 */
 
-Array.prototype.myFilter = function(callback) {
+Array.prototype.myFilter = function (callback) {
+    var newArray = []
+    this.forEach((element) => {
+        if (callback(element)) {
+            newArray.push(element)
+        }
+    })
 
-  var newArray = [];
-  this.forEach(element => {
-    if (callback(element)) {
-      newArray.push(element);
-  }})
+    return newArray
+}
 
-  return newArray;
-};
-
-var new_s = s.myFilter(function(item) {
-  return item % 2 === 1;
-});
+var new_s = s.myFilter(function (item) {
+    return item % 2 === 1
+})

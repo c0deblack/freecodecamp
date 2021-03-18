@@ -6,7 +6,7 @@ function Dog() {
 */
 
 function Dog() {
-    this.name = "Fifo";
-    this.color = "brown";
-    this.numLegs = 4;
+    this.name = 'Fifo'
+    this.color = 'brown'
+    this.numLegs = 4
 }

@@ -1,5 +1,5 @@
 // The global variable
-var s = [23, 65, 98, 5];
+var s = [23, 65, 98, 5]
 
 /*
 Array.prototype.myMap = function(callback, arr = [], i = 0) {
@@ -27,16 +27,16 @@ Array.prototype.myMap = function(callback) {
 };
 */
 
-Array.prototype.myMap = function(callback) {
-  var newArray = [];
+Array.prototype.myMap = function (callback) {
+    var newArray = []
 
-  this.forEach(element => {
-    newArray.push(callback(element));
-  })
+    this.forEach((element) => {
+        newArray.push(callback(element))
+    })
 
-  return newArray;
-};
+    return newArray
+}
 
-var new_s = s.myMap(function(item) {
-  return item * 2;
-});
+var new_s = s.myMap(function (item) {
+    return item * 2
+})

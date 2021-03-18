@@ -55,26 +55,25 @@ function chunkArrayInGroups(arr, size) {
 */
 
 function chunkArrayInGroups(arr, size) {
-  const retArr = [];
+    const retArr = []
 
-  let loops = (arr.length / size);
+    let loops = arr.length / size
 
-  do {
-    log(loops, "loops starting val");
+    do {
+        log(loops, 'loops starting val')
 
-    retArr.push(arr.splice(0, size));
-    log(retArr, "return array so far..");
+        retArr.push(arr.splice(0, size))
+        log(retArr, 'return array so far..')
 
-    loops--;
-    log(loops, "loops ending val");
+        loops--
+        log(loops, 'loops ending val')
+    } while (loops > 0)
 
-  } while (loops > 0);
-
-  return retArr;
+    return retArr
 }
 
-const log = (output, str = "") => console.log(str + " " + output);
+const log = (output, str = '') => console.log(str + ' ' + output)
 
-log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), "Final output:");
+log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), 'Final output:')
 
-console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4))
