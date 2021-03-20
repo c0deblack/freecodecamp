@@ -8,6 +8,9 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
       - run: npm install
+        name: Check ESLint version
       - run: npx eslint -v
+        name: Check of eslintrc
       - run: find ./ -type f -name '.*'
+        name: Execute ESLint
       - run: npx eslint -c ./.eslintrc.yml js/*
