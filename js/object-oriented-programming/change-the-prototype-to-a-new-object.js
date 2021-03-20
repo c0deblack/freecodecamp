@@ -3,14 +3,13 @@ function Dog(name) {
 }
 
 Dog.prototype = {
-
   numLegs: 4,
   eat: () => {
     console.log("eat");
   },
   describe: () => {
     console.log("describe");
-  }
+  },
 };
 
 console.log(Dog.hasOwnProperty("name"));

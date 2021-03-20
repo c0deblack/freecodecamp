@@ -30,9 +30,7 @@ function sumFibs(num) {
 }
 */
 
-
 function sumFibs(num) {
-
   let fibSeq = [1, 1];
   let i = 1;
   let fibNum = 0;
@@ -40,19 +38,16 @@ function sumFibs(num) {
   //generate the Fibonacci sequence
 
   while (fibNum <= num) {
-    
-    fibNum = fibSeq[i-1] + fibSeq[i];
+    fibNum = fibSeq[i - 1] + fibSeq[i];
 
     if (fibNum <= num) fibSeq.push(fibNum);
 
     i++;
-  } 
+  }
 
   //filter out all odd values
   //and sum them all together
-  return fibSeq
-    .filter(x => x % 2 != 0)
-    .reduce((x, y) => x + y);
+  return fibSeq.filter((x) => x % 2 != 0).reduce((x, y) => x + y);
 }
 
 console.log(sumFibs(4));

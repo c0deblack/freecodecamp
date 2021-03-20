@@ -88,19 +88,16 @@ function fearNotLetter(str) {
 }
 */
 
-
-
 function fearNotLetter(str) {
   //define the entire range of letters
   const FULL_RANGE = "abcdefghijklmnopqrstuvwxyz";
-  const SUBRANGE = FULL_RANGE
-                    .split("")
-                    .splice(
-                      FULL_RANGE.indexOf(str.charAt(0)),
-                      FULL_RANGE.indexOf(str.slice(-1)) + 1 )
+  const SUBRANGE = FULL_RANGE.split("").splice(
+    FULL_RANGE.indexOf(str.charAt(0)),
+    FULL_RANGE.indexOf(str.slice(-1)) + 1
+  );
 
   //console.log(SUBRANGE);
-  
+
   const strArr = str.split("");
   for (let char of SUBRANGE) {
     if (strArr.indexOf(char) === -1) {

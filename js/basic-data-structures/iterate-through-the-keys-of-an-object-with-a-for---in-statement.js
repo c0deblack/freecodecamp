@@ -1,19 +1,18 @@
 const obj = {
   Alan: {
-    online: false
+    online: false,
   },
   Jeff: {
-    online: true
+    online: true,
   },
   Sarah: {
-    online: false
-  }
-}
+    online: false,
+  },
+};
 
 function countOnline(usersObj) {
-
   let numOnline = 0;
-  for (let user in usersObj){
+  for (let user in usersObj) {
     //log(user);
     //log(user);
     //log(typeof user);
@@ -26,8 +25,7 @@ function countOnline(usersObj) {
   }
   //log("bout to return..");
   return numOnline;
-
 }
 
-const log = output => console.log(output);
+const log = (output) => console.log(output);
 log(countOnline(obj));

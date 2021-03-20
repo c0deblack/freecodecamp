@@ -1,6 +1,10 @@
 // The global variable
-const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
-
+const bookList = [
+  "The Hound of the Baskervilles",
+  "On The Electrodynamics of Moving Bodies",
+  "Philosophiæ Naturalis Principia Mathematica",
+  "Disquisitiones Arithmeticae",
+];
 
 /*
 function add(list, bookName) {
@@ -33,17 +37,21 @@ function add(bookArr, bookName) {
   return bookArr.join("~").concat("~", bookName).split("~");
 }
 
-
 function remove(bookArr, bookName) {
   const book_index = bookArr.indexOf(bookName);
   if (book_index >= 0) {
-    return ((arr = bookArr.slice(0), dex = book_index) => {arr.splice(dex, 1); return arr;})();    
+    return ((arr = bookArr.slice(0), dex = book_index) => {
+      arr.splice(dex, 1);
+      return arr;
+    })();
   }
 }
 
-var newBookList = add(bookList, 'A Brief History of Time');
-var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
-var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
-
+var newBookList = add(bookList, "A Brief History of Time");
+var newerBookList = remove(bookList, "On The Electrodynamics of Moving Bodies");
+var newestBookList = remove(
+  add(bookList, "A Brief History of Time"),
+  "On The Electrodynamics of Moving Bodies"
+);
 
 console.log(bookList);

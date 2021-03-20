@@ -55,11 +55,6 @@ console.info([...map.values()])
 console.info([...map.entries()])
 */
 
-
-
-
-
-
 /*
 function diffArray(arr1, arr2) {
   return [...diff(arr1, arr2), ...diff(arr2, arr1)];
@@ -104,7 +99,7 @@ function diffArray(arr1, arr2) {
 
   // count the number of occurances of
   // each element
-  
+
   const array = arr1.concat(arr2);
 
   //console.log(array);

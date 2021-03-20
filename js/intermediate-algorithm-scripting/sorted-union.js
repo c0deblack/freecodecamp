@@ -127,14 +127,13 @@ function uniteUnique(...arr) {
   //flatten an array of arrays
   //use the Set object to get an array of unique values
 
-  return Array.from(new Set(
-    arr.reduce(
-        function(accumulator, currentValue) {
-          return accumulator.concat(currentValue)
-        },
-        []
-      )
-  ))
+  return Array.from(
+    new Set(
+      arr.reduce(function (accumulator, currentValue) {
+        return accumulator.concat(currentValue);
+      }, [])
+    )
+  );
   return arr;
 }
 

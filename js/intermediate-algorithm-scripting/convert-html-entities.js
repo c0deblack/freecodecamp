@@ -83,14 +83,13 @@ function convertHTML(str) {
     "&": "&amp;",
     "<": "&lt;",
     ">": "&gt;",
-    "\"": "&quot;",
-    "'": "&apos;"
-  }
+    '"': "&quot;",
+    "'": "&apos;",
+  };
   return str
     .split("")
-    .map(char => (char in HE) ? HE[char] : char)
+    .map((char) => (char in HE ? HE[char] : char))
     .join("");
-
 }
 
 console.log(convertHTML("Dolce & Gabbana"));

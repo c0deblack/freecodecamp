@@ -10,11 +10,10 @@ function frankenSplice(arr1, arr2, n) {
 */
 
 function frankenSplice(arr1, arr2, n) {
-
   //console.log(arr1.slice(0));
   //console.log(...arr2);
   let tmp = arr2.slice(0);
-  tmp.splice(n,0,...arr1);
+  tmp.splice(n, 0, ...arr1);
   //console.log(tmp);
   return tmp;
 }

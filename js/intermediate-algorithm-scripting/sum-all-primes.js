@@ -35,13 +35,13 @@ function sumPrimes(num) {
 function sumPrimes(num) {
   let sum = 0;
 
-  function isPrime (n) {
+  function isPrime(n) {
     if (n < 2) return false;
     var q = Math.floor(Math.sqrt(n));
     for (let i = 2; i <= q; i++) {
-        if (n % i == 0) {
-            return false;
-        }
+      if (n % i == 0) {
+        return false;
+      }
     }
     return true;
   }
@@ -54,6 +54,6 @@ function sumPrimes(num) {
 
   console.log(sum);
   return sum;
-  }
+}
 
 sumPrimes(20);

@@ -112,27 +112,26 @@ function addTogether() {
 */
 
 function addTogether(...args) {
-  if (!args.every(arg => typeof(arg) == "number" )) {
-    return undefined
+  if (!args.every((arg) => typeof arg == "number")) {
+    return undefined;
   }
 
   if (args.length > 1) {
     return args[0] + args[1];
   } else {
-    return ((numToAdd) => {
+    return (numToAdd) => {
       //console.log(numToAdd);
       //console.log(typeof(numToAdd));
-      if (typeof(numToAdd) == "number") {
-        return args[0] + numToAdd
+      if (typeof numToAdd == "number") {
+        return args[0] + numToAdd;
       } else {
-        return undefined
+        return undefined;
       }
-    })
+    };
   }
 }
 
-
-console.log(addTogether(2,3));
+console.log(addTogether(2, 3));
 
 let test = addTogether(2);
 

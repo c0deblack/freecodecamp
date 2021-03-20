@@ -156,7 +156,8 @@ function smallestCommons(arr) {
   //console.log(START, END);
 
   ////now we can find the range between the numbers
-  Array.range = (start, end) => Array.from({length: (end - start + 1)}, (v, k) => k + start);
+  Array.range = (start, end) =>
+    Array.from({ length: end - start + 1 }, (v, k) => k + start);
 
   const RANGE = Array.range(START, END);
   console.log(RANGE);
@@ -176,7 +177,7 @@ function smallestCommons(arr) {
 
     //console.log(scm);
 
-    if (RANGE.every(elem => scm % elem == 0)) {
+    if (RANGE.every((elem) => scm % elem == 0)) {
       loop = false;
     }
   }
@@ -184,6 +185,5 @@ function smallestCommons(arr) {
   return scm;
 }
 
-
-smallestCommons([1,5]);
-smallestCommons([1,16]);
+smallestCommons([1, 5]);
+smallestCommons([1, 16]);

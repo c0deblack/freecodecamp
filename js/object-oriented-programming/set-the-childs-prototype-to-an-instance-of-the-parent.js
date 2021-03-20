@@ -1,15 +1,13 @@
-function Animal() { }
+function Animal() {}
 
 Animal.prototype = {
   constructor: Animal,
-  eat: function() {
+  eat: function () {
     console.log("nom nom nom");
-  }
+  },
 };
 
-function Dog() { }
-
-
+function Dog() {}
 
 Dog.prototype = Object.create(Animal.prototype);
 

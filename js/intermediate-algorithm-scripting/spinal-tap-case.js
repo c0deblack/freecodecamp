@@ -35,10 +35,12 @@ function spinalCase(str) {
 }
 */
 
-
 function spinalCase(str) {
   //console.log(str.match(/[A-Z]?[a-z]+/g))
-  return str.match(/[A-Z]?[a-z]+/g).join("-").toLowerCase();
+  return str
+    .match(/[A-Z]?[a-z]+/g)
+    .join("-")
+    .toLowerCase();
 }
 
 console.log(spinalCase("thisIsSpinalTap"));

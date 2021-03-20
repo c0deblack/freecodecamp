@@ -10,12 +10,9 @@ function nonMutatingSort(arr) {
 */
 
 function nonMutatingSort(arr) {
-
-  return arr.slice(0).sort((a,b) => {
+  return arr.slice(0).sort((a, b) => {
     //return a === b ? 0 : a < b ? -1 : 1;
     return a - b;
-  })
-
-
+  });
 }
 console.log(nonMutatingSort(globalArray));

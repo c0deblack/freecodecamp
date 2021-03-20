@@ -134,8 +134,6 @@ function myReplace(str, before, after) {
 }
 */
 
-
-
 function myReplace(str, before, after) {
   // make sure case matches
   const IS_UPPER = /^[A-Z]/;
@@ -149,18 +147,24 @@ function myReplace(str, before, after) {
 
   // replace "before" with "after"
   return isBeforeUpper == isAfterUpper
-  ? str.replace(before, after)
-  : str.replace(before, () => {
+    ? str.replace(before, after)
+    : str.replace(before, () => {
+        //console.log(after)
 
-    //console.log(after)
-
-    return (isBeforeUpper ? after[0].toUpperCase() : after[0].toLowerCase()) + after.slice(1);
-  })
+        return (
+          (isBeforeUpper ? after[0].toUpperCase() : after[0].toLowerCase()) +
+          after.slice(1)
+        );
+      });
 }
 
-console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
+console.log(
+  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped")
+);
 console.log(myReplace("Let us go to the store", "store", "mall"));
 console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
 console.log(myReplace("I think we should look up there", "up", "Down"));
 console.log(myReplace("This has a spellngi error", "spellngi", "spelling"));
-console.log(myReplace("Let us get back to more Coding", "Coding", "algorithms"));
+console.log(
+  myReplace("Let us get back to more Coding", "Coding", "algorithms")
+);

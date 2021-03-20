@@ -39,8 +39,6 @@ function dropElements(arr, func) {
 }
 */
 
-
-
 function dropElements(arr, func) {
   let i = 0;
 
@@ -50,6 +48,18 @@ function dropElements(arr, func) {
   return arr.slice(i);
 }
 
-console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3; }));
-console.log(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}));
-console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}));
+console.log(
+  dropElements([1, 2, 3, 4], function (n) {
+    return n >= 3;
+  })
+);
+console.log(
+  dropElements([1, 2, 3, 9, 2], function (n) {
+    return n > 2;
+  })
+);
+console.log(
+  dropElements([1, 2, 3, 4], function (n) {
+    return n >= 3;
+  })
+);

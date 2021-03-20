@@ -59,11 +59,11 @@ function sumAll(arr) {
   //console.log("result start val:", result);
 
   while (adder <= max) {
-    result += adder;  
+    result += adder;
     adder++;
 
     //console.log("adder:", adder);
-   // console.log("result:", result);
+    // console.log("result:", result);
   }
   return result;
 }

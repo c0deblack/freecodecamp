@@ -14,17 +14,17 @@ Array.prototype.myFilter = function(callback) {
 };
 */
 
-Array.prototype.myFilter = function(callback) {
-
+Array.prototype.myFilter = function (callback) {
   var newArray = [];
-  this.forEach(element => {
+  this.forEach((element) => {
     if (callback(element)) {
       newArray.push(element);
-  }})
+    }
+  });
 
   return newArray;
 };
 
-var new_s = s.myFilter(function(item) {
+var new_s = s.myFilter(function (item) {
   return item % 2 === 1;
 });
