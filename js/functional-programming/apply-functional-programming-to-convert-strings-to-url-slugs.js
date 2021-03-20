@@ -20,11 +20,10 @@ function urlSlug(title) {
 
 function urlSlug(title) {
   return title
-  .toLowerCase()
-  .split(" ")
-  .filter(word => word.length > 0)
-  .join("-");
+    .toLowerCase()
+    .split(" ")
+    .filter((word) => word.length > 0)
+    .join("-");
 }
-
 
 console.log(urlSlug(" Winter Is  Coming"));

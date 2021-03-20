@@ -69,24 +69,29 @@ function getIndexToIns(arr, num) {
 */
 
 function getIndexToIns(arr, num) {
-
-  const sorted = arr.sort((a, b) => { 
-    if (a < b){return -1;}
-    if (a > b){return 1;}
-    if (a === b){return 0;}
-    });
-    const len = arr.length;
-
-    log(sorted);
-    log(len);
-    for (let i = 0; i < len; i++) {
-      if (sorted[i] >= num) {
-        return i;
-      }
+  const sorted = arr.sort((a, b) => {
+    if (a < b) {
+      return -1;
     }
-    return len;
+    if (a > b) {
+      return 1;
+    }
+    if (a === b) {
+      return 0;
+    }
+  });
+  const len = arr.length;
+
+  log(sorted);
+  log(len);
+  for (let i = 0; i < len; i++) {
+    if (sorted[i] >= num) {
+      return i;
+    }
+  }
+  return len;
 }
 
-const log = output => console.log(output);
+const log = (output) => console.log(output);
 
 console.log(getIndexToIns([5, 3, 20, 3], 5));

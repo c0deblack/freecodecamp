@@ -1,5 +1,4 @@
-
- /*
+/*
  function reverseString(str) {
   let arr = str.split("");
   let retArr = [];

@@ -28,28 +28,26 @@ var Person = function(firstAndLast) {
 };
 */
 
-var Person = function(firstAndLast) {
-
-
-  this.getLastName = () => (this.lastName)
-                            ? this.lastName
-                            : this.lastName = firstAndLast
-                                                .split(" ")[1]
-  this.getFirstName = () => (this.firstName)
-                            ? this.firstName
-                            : this.firstName = firstAndLast
-                                                .split(" ")[0]
+var Person = function (firstAndLast) {
+  this.getLastName = () =>
+    this.lastName
+      ? this.lastName
+      : (this.lastName = firstAndLast.split(" ")[1]);
+  this.getFirstName = () =>
+    this.firstName
+      ? this.firstName
+      : (this.firstName = firstAndLast.split(" ")[0]);
   this.getFullName = () => `${this.getFirstName()} ${this.getLastName()}`;
 
-  this.setFirstName = (firstName) => this.firstName = firstName;
+  this.setFirstName = (firstName) => (this.firstName = firstName);
 
-  this.setLastName = (lastName) => this.lastName = lastName;
+  this.setLastName = (lastName) => (this.lastName = lastName);
 
-  this.setFullName = (firstAndLast) => [this.firstName, this.lastName] = firstAndLast.split(" ")
-
+  this.setFullName = (firstAndLast) =>
+    ([this.firstName, this.lastName] = firstAndLast.split(" "));
 };
 
-var bob = new Person('Bob Ross');
+var bob = new Person("Bob Ross");
 console.log(bob.getFullName());
 console.log(bob instanceof Person);
 console.log(bob.firstName);

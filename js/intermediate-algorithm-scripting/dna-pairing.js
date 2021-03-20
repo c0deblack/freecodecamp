@@ -46,26 +46,24 @@ function pairElement(str) {
 }
 */
 function pairElement(str) {
+  const BASE_PAIRS = {
+    A: "T",
+    T: "A",
+    G: "C",
+    C: "G",
+  };
 
-  const BASE_PAIRS = { 
-    "A": "T",
-    "T": "A",
-    "G": "C",
-    "C": "G"
-  }
-  
   let retArray = [];
 
   //loop through each character of the string
-  for (var x = 0; x < str.length; x++)
-  {
-      let base = str.charAt(x);
+  for (var x = 0; x < str.length; x++) {
+    let base = str.charAt(x);
 
-      retArray.push([base, BASE_PAIRS[base]])
+    retArray.push([base, BASE_PAIRS[base]]);
   }
   console.log(retArray);
   return retArray;
 }
 
 pairElement("GCG");
-pairElement("ATCGA")
+pairElement("ATCGA");

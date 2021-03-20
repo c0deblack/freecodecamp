@@ -1,19 +1,15 @@
 let bird = {
   name: "Donald",
-  numLegs: 2
+  numLegs: 2,
 };
 
 let boat = {
   name: "Warrior",
-  type: "race-boat"
+  type: "race-boat",
 };
 
-
-
 function glideMixin(obj) {
-  obj.glide = function (){
-
-  };
+  obj.glide = function () {};
 }
 
 glideMixin(bird);

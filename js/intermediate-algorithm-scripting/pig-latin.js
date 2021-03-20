@@ -183,7 +183,7 @@ function translatePigLatin(str) {
     let i = 0;
 
     //console.log(MAX_I);
-  
+
     do {
       //console.log(i);
       let isConsonantAtStart = /[^aeiou]/.test(STRING_ARRAY[0]);
@@ -196,11 +196,10 @@ function translatePigLatin(str) {
       }
 
       i++;
-    } while (keepGoing == true );
+    } while (keepGoing == true);
     return STRING_ARRAY.join("").concat("ay");
   }
 }
-
 
 console.log(translatePigLatin("rhythm"));
 console.log(translatePigLatin("schwartz"));

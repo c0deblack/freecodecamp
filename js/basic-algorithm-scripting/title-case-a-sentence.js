@@ -33,7 +33,6 @@ function titleCase(str) {
 }
 */
 
-
 function titleCase(str) {
   const retStr = [];
   const words = str.split(" ");

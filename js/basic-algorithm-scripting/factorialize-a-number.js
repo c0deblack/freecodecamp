@@ -1,4 +1,4 @@
-  /*
+/*
   function factorialize(num) {
   for (var product = 1; num > 0; num--) {
     product *= num;
@@ -6,7 +6,7 @@
   return product;
 }
 */
-  /*
+/*
   function factorialize(num) {
   if (num === 0) {
     return 1;
@@ -15,7 +15,7 @@
 }
 
 */
-  /* function factorialize(num, factorial = 1) {
+/* function factorialize(num, factorial = 1) {
   if (num == 0) {
     return factorial;
   } else {
@@ -23,7 +23,7 @@
   }
 }
 */
-  /*function factorialize(num, factorial = 1) {
+/*function factorialize(num, factorial = 1) {
   return num < 0 ? 1 : (
     new Array(num)
       .fill(undefined)
@@ -31,8 +31,7 @@
   );
 }
  */
- function factorialize(num) {
-  
+function factorialize(num) {
   log("num is " + num);
   if (num === 0) {
     return 1;
@@ -48,6 +47,6 @@
   }
 }
 
-const log = output => console.log(output);
+const log = (output) => console.log(output);
 
 console.log(factorialize(5));

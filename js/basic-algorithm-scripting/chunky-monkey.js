@@ -57,7 +57,7 @@ function chunkArrayInGroups(arr, size) {
 function chunkArrayInGroups(arr, size) {
   const retArr = [];
 
-  let loops = (arr.length / size);
+  let loops = arr.length / size;
 
   do {
     log(loops, "loops starting val");
@@ -67,7 +67,6 @@ function chunkArrayInGroups(arr, size) {
 
     loops--;
     log(loops, "loops ending val");
-
   } while (loops > 0);
 
   return retArr;

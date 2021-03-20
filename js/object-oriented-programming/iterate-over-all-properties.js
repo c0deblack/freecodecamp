@@ -10,7 +10,7 @@ let ownProps = [];
 let prototypeProps = [];
 
 for (let property in beagle) {
-  if(beagle.hasOwnProperty(property)) {
+  if (beagle.hasOwnProperty(property)) {
     ownProps.push(property);
   } else {
     prototypeProps.push(property);

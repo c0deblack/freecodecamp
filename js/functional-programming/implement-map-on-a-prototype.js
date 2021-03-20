@@ -27,16 +27,16 @@ Array.prototype.myMap = function(callback) {
 };
 */
 
-Array.prototype.myMap = function(callback) {
+Array.prototype.myMap = function (callback) {
   var newArray = [];
 
-  this.forEach(element => {
+  this.forEach((element) => {
     newArray.push(callback(element));
-  })
+  });
 
   return newArray;
 };
 
-var new_s = s.myMap(function(item) {
+var new_s = s.myMap(function (item) {
   return item * 2;
 });

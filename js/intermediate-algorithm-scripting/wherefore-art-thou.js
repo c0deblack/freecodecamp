@@ -54,10 +54,7 @@ function whatIsInAName(collection, source) {
 }
 */
 
-
 function whatIsInAName(collection, source) {
-
-
   const arr = [];
 
   for (let i = 0; i < collection.length; i++) {
@@ -70,16 +67,19 @@ function whatIsInAName(collection, source) {
     console.log("obj", objKeys);
     console.log("src", srcKeys);
 
-    if (srcKeys.every((srcKey) => {return objKeys.includes(srcKey)})) {
-
+    if (
+      srcKeys.every((srcKey) => {
+        return objKeys.includes(srcKey);
+      })
+    ) {
       console.log("PROP MATCH");
 
       let isSourceInCollection = true;
-      srcKeys.forEach(srcKey => {
+      srcKeys.forEach((srcKey) => {
         if (obj[srcKey] != source[srcKey]) {
           isSourceInCollection = false;
-        } 
-      })
+        }
+      });
 
       if (isSourceInCollection == true) {
         arr.push(obj);
@@ -90,5 +90,11 @@ function whatIsInAName(collection, source) {
   return arr;
 }
 
-
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })
+whatIsInAName(
+  [
+    { first: "Romeo", last: "Montague" },
+    { first: "Mercutio", last: null },
+    { first: "Tybalt", last: "Capulet" },
+  ],
+  { last: "Capulet" }
+);
