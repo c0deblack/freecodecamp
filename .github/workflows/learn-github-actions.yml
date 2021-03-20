@@ -8,11 +8,4 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
       - run: npm install
-jobs:
-  eslint:
-    runs-on: ubuntu-16.04
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v2
       - run: npx eslint -v
