@@ -9,4 +9,4 @@ jobs:
         uses: actions/setup-node@v2
       - run: npm install
       - run: npx eslint -v
-      - run: npx eslint js/*
+      - run: npx eslint -c ./.eslintrc.yml js/*
