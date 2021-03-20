@@ -153,7 +153,7 @@ function getRating(watchList){
   let count = 0;
 
   let total = watchList.reduce((sum, curElem) => {
-    if (curElem.["Director"] == "Christopher Nolan") {
+    if (curElem["Director"] == "Christopher Nolan") {
       count++;
       //console.log(count);
       //console.log(curElem.imdbRating);
