@@ -1,0 +1,16 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+      - run: npm install
+        name: Check ESLint version
+      - run: npx eslint -v
+        name: Check of eslintrc
+      - run: find ./ -type f -name '.*'
+        name: Execute ESLint
+      - run: npx eslint -c ./.eslintrc.yml js/*
