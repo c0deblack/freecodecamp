@@ -1,0 +1,461 @@
+<!--
+        Tribute Page
+  / _ \_____________/`/\+-/\'\'\
+\_\(_)/_/ c0deblack -+-    -+-+-
+ _//o\\_            \'\/+-\/`/`/
+  /   \              \/-+--\/`/
+-->
+
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<!-- 
+
+FONT SECTION
+
+-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Press+Start+2P&display=swap" rel="stylesheet"> 
+
+
+<style>
+    /* START CSS Reset */
+    *,
+    *:before,
+    *:after,
+    *:hover {
+      box-sizing: border-box;
+    }
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+    display: block;
+    }
+    body {
+    line-height: 1;
+    }
+    a {
+    text-decoration: none;
+    }
+    a:focus {
+    }
+    ol,
+    ul {
+    list-style: none;
+    }
+    blockquote,
+    q {
+    quotes: none;
+    }
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+    content: "";
+    content: none;
+    }
+    table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+    /* END CSS Reset */
+
+    /* Declare Global Variables */
+    :root {
+    --default-bg-color: hsla(0, 0%, 0%, 1);
+    --default-txt-color: hsla(0, 0%, 100%, 1);
+
+    --link-color: hsl(337.9, 81.7%, 70%)
+    --link-visited-color: hsl(337.9, 81.7%, 70%);
+    --link-hover-color: hsl(337.9, 81.7%, 70%);
+
+    --menu-shadow: hsla(2, 95%, 33%, 0.45) 1px 1px 1px 1px,
+    hsla(2, 95%, 33%, 0.45)-1px -1px 1px 1px;
+    --menu-border: solid 1px hsl(-23.7, 100%, 15.9%);
+    --menu-bg: hsla(2, 95%, 33%, 0.45);
+    --menu-item-bg: hsla(2, 60%, 20%, 0.45);
+    --menu-panel-bg: hsla(2, 30%, 15%, 0.85);
+    }
+    /* Set Defaults */
+    html {
+    background-color: var(--default-bg-color);
+    color: var(--default-txt-color);
+    font-family: Sans, Monospace;
+    }
+    a:link {
+    color: var(--link-color);
+    }
+    a:visited {
+    color: var(--link-visited-color);
+    }
+    a:hover {
+    color: var(--link-hover-color);
+    }
+    /* Container */
+    main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-gap: 0;
+    grid-template-areas:
+    "header",
+    "content",
+    "footer";
+
+    background-image: url("https://i.ibb.co/ng24tRp/work-1627703.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+
+    #header-main {
+    grid-area: header;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 7px;
+    width: 100%;
+    text-align: center;
+    }
+    #header-main > div {
+    width: 25vw;
+    }
+    #header-main #div-title-header {
+    position: absolute;
+    left: 2%;
+    top: 1.5vh;
+    }
+    #header-main #title {
+    font-size: 1.5rem;
+    }
+    #header-main #div-logo-header {
+    width: 100%;
+    }
+    #header-main #p-logo-div {
+    vertical-align: middle;
+    }
+    #p-logo-div .span-logobracket-p {
+    font-size: 5.5vw;
+    font-family: 'Audiowide', cursive;
+    }
+    #p-logo-div .span-logotext-p {
+    font-size: 3vw;
+    font-family: 'Press Start 2P', monospace;
+    }
+    #nav {
+    position: absolute;
+    top: 1.5vh;
+    right: 2%;
+    padding: 5px 3px 0px 3px;
+    max-width: 50px;
+    border-radius: 20px;
+    max-height: 300px;
+    font-weight: 600;
+    box-shadow: var(--menu-shadow);
+    border: var(--menu-border);
+    background: var(--menu-bg);
+    }
+    .nav {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .nav > h2 {
+    padding-top: 7px;
+    margin-bottom: 6px;
+    }
+    .ul-menu-items {
+    display: block;
+    height: 1px;
+    width: 1px;
+    color: black;
+    text-align: center;
+    overflow: scroll;
+    /* Disable scrollbar */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    }
+    .ul-menu-items:-webkit-scrollbar {
+    /* Disable scrollbar */
+    display: none;
+    }
+    #nav:hover {
+    max-width: 22%;
+    }
+    .nav:hover + .ul-menu-items,
+    .ul-menu-items:hover
+    {
+    height: 250px;
+    width: 100%;
+    overflow: scroll;
+    }
+    .li-menu-item-window {
+    display: block;
+    color: var(--link-color);
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+    .li-menu-item-window:hover {
+    color: var(--link-hover-color);
+    }
+    .li-menu-item-window > h2 {
+    display: block;
+    }
+    .li-menu-item-window > section {
+    display: none;
+    position: relative;
+    overflow: scroll;
+    /* Disable scrollbar */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    }
+    .li-menu-item-window:-webkit-scrollbar {
+    /* Disable scrollbar */
+    display: none;
+    }
+    .li-menu-item-window:focus section {
+    display: block;
+    position: fixed;
+    bottom: 7vh;
+    left: 0;
+    width: 75.48%;
+    height: 70vh;
+    box-shadow: var(--menu-shadow);
+    border: var(--menu-border);
+    background: var(--menu-panel-bg);
+    border-radius: 20px;
+    }
+    .section-image {
+    width: 100%;
+    }
+</style>
+
+<!-- 
+
+MAIN SECTION
+
+-->
+<main id="main">
+  <!-- 
+
+
+
+  HEADER SECTION
+
+
+
+  -->
+  <header id="header-main" class="header">
+    <div id="div-title-header">
+      <h1 id="title">
+        HTML & CSS
+      </h1>
+    </div>
+    <div id="div-logo-header">
+      <p id="p-logo-div">
+        <span class="span-logobracket-p">
+          [
+          <span class="span-logotext-p">
+            c0deblack
+          </span>
+          ]
+        </span>
+      </p>
+    </div>
+
+    <div id="nav">
+      <ul class="nav" tabindex="-1">
+        <li class="li-menu-open" >
+          <h2>
+            NAV
+          </h2>
+        </li>
+      </ul>
+      
+      <ul class="ul-menu-items" tabindex="-1">
+        <li tabindex="-1" class="li-menu-item-window">
+          <h3>
+            HELLO WORLD
+          </h3>
+          
+          <section>
+            
+             <img class="section-image" src="https://i.ibb.co/x8CqXdg/1-U-R58ahr5dt-Avt-SLGK2w-Xg.png" alt="The word 'hello' in text and an image of the world globe below it.">
+            <h4>
+              A TRIBUTE TO HTML &amp CSS
+            </h4>
+            
+            <p>
+Hello visitor!
+	Welcome to my tribute to HTML and CSS. It is part of a series of projects from FreeCodeCamp. Coded entirely in HTML and CSS, this website features some interesting things that can be done without using javascript. 
+	Creating a user interface, that is not only easy to navigate but that also includes a certain level of visual appeal or "eye candy" has always been a fun hobby for me. Conceptualizing and implementing interactive content without the use of javascript or libraries is an ongoing exercise for me.            
+            </p>
+
+          </section>
+        </li>
+        
+        <li tabindex="-1" class="li-menu-item-window">
+          <h3>
+            HTML &amp; CSS
+          </h3>
+          
+          <section>
+            <p>HTML &amp; CSS SECTION</p>
+          </section>
+        </li>
+        
+        <li tabindex="-1" class="li-menu-item-window">
+          <h3>
+            ABOUT ME
+          </h3>
+          <section>
+            <p>ABOUT ME SECTION</p>
+          </section>
+        </li>
+        
+        <li tabindex="-1" class="li-menu-item-window">
+          <h3>
+            CONTACT
+          </h3>
+          <section>
+            <p>CONTACT SECTION</p>
+          </section>
+        </li>
+        
+      </ul>
+    </div>
+  
+  </header>
+  <!-- 
+
+
+
+  CONTENT SECTION
+
+
+
+  -->
+  <content class="content">
+    
+  </content>
+  <!-- 
+
+
+
+  FOOTER SECTION
+
+
+
+  -->
+  <footer>
+    
+  </footer>
+
