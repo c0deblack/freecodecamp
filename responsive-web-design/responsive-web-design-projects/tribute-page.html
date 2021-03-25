@@ -5,19 +5,21 @@
  _//o\\_            \'\/+-\/`/`/
   /   \              \/-+--\/`/
 -->
+<head>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 
-<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-
-<!-- 
+  <!-- 
 
 FONT SECTION
 
 -->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Press+Start+2P&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Audiowide&family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
 
-
-<style>
+  <style>
     /* START CSS Reset */
     *,
     *:before,
@@ -133,7 +135,8 @@ FONT SECTION
     a {
     text-decoration: none;
     }
-    a:focus {
+    a:hover {
+      color: inherit;
     }
     ol,
     ul {
@@ -216,10 +219,12 @@ FONT SECTION
     position: fixed;
     top: 7px;
     width: 100%;
-    text-align: center;
     }
     #header-main > div {
     width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     }
     #header-main #div-title-header {
     position: absolute;
@@ -248,32 +253,33 @@ FONT SECTION
     top: 1.5vh;
     right: 2%;
     padding: 5px 3px 0px 3px;
-    max-width: 50px;
     border-radius: 20px;
     max-height: 300px;
     font-weight: 600;
     box-shadow: var(--menu-shadow);
     border: var(--menu-border);
     background: var(--menu-bg);
+    display: flex;
+    flex-direction: column;
     }
     .nav {
-    width: 100%;
     height: 100%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    display: block;
     }
     .nav > h2 {
     padding-top: 7px;
     margin-bottom: 6px;
+    width: 50px;
     }
     .ul-menu-items {
     display: block;
     height: 1px;
     width: 1px;
     color: black;
-    text-align: center;
     overflow: scroll;
     /* Disable scrollbar */
     -ms-overflow-style: none; /* IE and Edge */
@@ -283,19 +289,17 @@ FONT SECTION
     /* Disable scrollbar */
     display: none;
     }
-    #nav:hover {
-    max-width: 22%;
-    }
     .nav:hover + .ul-menu-items,
     .ul-menu-items:hover
     {
-    height: 250px;
-    width: 100%;
+    height: 50vh;
+    min-height: 100px;
+    width: 200px;
     overflow: scroll;
     }
     .li-menu-item-window {
     display: block;
-    color: var(--link-color);
+    color: black;
     height: 90px;
     display: flex;
     justify-content: center;
@@ -324,20 +328,35 @@ FONT SECTION
     .li-menu-item-window:focus section {
     display: block;
     position: fixed;
-    bottom: 7vh;
+    bottom: 0;
     left: 0;
-    width: 75.48%;
-    height: 70vh;
+    width: 78%;
+    height: 90%;
     box-shadow: var(--menu-shadow);
     border: var(--menu-border);
-    background: var(--menu-panel-bg);
+    background: black;
+    color: white;
+    font-weight: 300;
     border-radius: 20px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    }
+    .li-menu-item-window > section {
+      background-color: hsla(0, 0%, 0%, 1);
+    }
+    .li-menu-item-window h4 {
+      font-weight: 400;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+    .li-menu-item-window p {
+      padding: 5px;
     }
     .section-image {
     width: 100%;
     }
-</style>
-
+  </style>
+</head>
 <!-- 
 
 MAIN SECTION
@@ -355,17 +374,13 @@ MAIN SECTION
   -->
   <header id="header-main" class="header">
     <div id="div-title-header">
-      <h1 id="title">
-        HTML & CSS
-      </h1>
+      <h1 id="title">HTML & CSS</h1>
     </div>
     <div id="div-logo-header">
       <p id="p-logo-div">
         <span class="span-logobracket-p">
           [
-          <span class="span-logotext-p">
-            c0deblack
-          </span>
+          <span class="span-logotext-p"> c0deblack </span>
           ]
         </span>
       </p>
@@ -373,66 +388,76 @@ MAIN SECTION
 
     <div id="nav">
       <ul class="nav" tabindex="-1">
-        <li class="li-menu-open" >
-          <h2>
-            NAV
-          </h2>
+        <li class="li-menu-open">
+          <h2>NAV</h2>
         </li>
       </ul>
-      
+
       <ul class="ul-menu-items" tabindex="-1">
         <li tabindex="-1" class="li-menu-item-window">
-          <h3>
-            HELLO WORLD
-          </h3>
-          
-          <section>
-            
-             <img class="section-image" src="https://i.ibb.co/x8CqXdg/1-U-R58ahr5dt-Avt-SLGK2w-Xg.png" alt="The word 'hello' in text and an image of the world globe below it.">
-            <h4>
-              A TRIBUTE TO HTML &amp CSS
-            </h4>
-            
-            <p>
-Hello visitor!
-	Welcome to my tribute to HTML and CSS. It is part of a series of projects from FreeCodeCamp. Coded entirely in HTML and CSS, this website features some interesting things that can be done without using javascript. 
-	Creating a user interface, that is not only easy to navigate but that also includes a certain level of visual appeal or "eye candy" has always been a fun hobby for me. Conceptualizing and implementing interactive content without the use of javascript or libraries is an ongoing exercise for me.            
-            </p>
+          <h3>HELLO WORLD</h3>
 
-          </section>
-        </li>
-        
-        <li tabindex="-1" class="li-menu-item-window">
-          <h3>
-            HTML &amp; CSS
-          </h3>
-          
           <section>
-            <p>HTML &amp; CSS SECTION</p>
+            <img
+              class="section-image"
+              src="https://i.ibb.co/x8CqXdg/1-U-R58ahr5dt-Avt-SLGK2w-Xg.png"
+              alt="The word 'hello' in text and an image of the world globe below it."
+            />
+            <h4>A TRIBUTE TO HTML &amp CSS</h4>
+            <h5>Hello visitor!</h5>
+            <p>
+              Welcome to my tribute to HTML and CSS. It is part of a series of
+              projects from FreeCodeCamp. Coded entirely in HTML and CSS, this
+              website features some interesting things that can be done without
+              using javascript.
+            </p>
           </section>
         </li>
-        
+
         <li tabindex="-1" class="li-menu-item-window">
-          <h3>
-            ABOUT ME
-          </h3>
+          <h3>CSS Menus</h3>
+
           <section>
-            <p>ABOUT ME SECTION</p>
+            <h4>CSS Menu Examples</h4>
+
+            <h5>Slice Menu</h5>
+            <div class="example">
+              <ul class="slice-menu">
+                <li class="slice-menu-box"></li>
+                <li class="slice-menu-open">Open Menu</li>
+                <li class="slice-menu-item">Menu Item 1</li>
+                <li class="slice-menu-item">Menu Item 2</li>
+                <li class="slice-menu-item">Menu Item 3</li>
+              </ul>
+            </div>
           </section>
         </li>
-        
+
         <li tabindex="-1" class="li-menu-item-window">
-          <h3>
-            CONTACT
-          </h3>
+          <h3>CSS Animations</h3>
           <section>
-            <p>CONTACT SECTION</p>
+            <h4>CSS Animation Examples</h4>
+            <p></p>
           </section>
         </li>
-        
+
+        <li tabindex="-1" class="li-menu-item-window">
+          <h3>CSS Transistions</h3>
+          <section>
+            <h4>CSS Transistions Examples</h4>
+            <p></p>
+          </section>
+        </li>
+
+        <li tabindex="-1" class="li-menu-item-window">
+          <h3>CSS Art</h3>
+          <section>
+            <h4>CSS Art Examples</h4>
+            <p></p>
+          </section>
+        </li>
       </ul>
     </div>
-  
   </header>
   <!-- 
 
@@ -443,9 +468,7 @@ Hello visitor!
 
 
   -->
-  <content class="content">
-    
-  </content>
+  <content class="content"> </content>
   <!-- 
 
 
@@ -455,7 +478,5 @@ Hello visitor!
 
 
   -->
-  <footer>
-    
-  </footer>
-
+  <footer></footer>
+</main>
