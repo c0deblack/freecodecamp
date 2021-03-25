@@ -190,7 +190,8 @@ FONT SECTION
     a:hover {
     color: var(--link-hover-color);
     }
-    /* Container */
+  
+/*
     main {
     position: absolute;
     top: 0;
@@ -281,12 +282,10 @@ FONT SECTION
     width: 1px;
     color: black;
     overflow: scroll;
-    /* Disable scrollbar */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
     }
     .ul-menu-items:-webkit-scrollbar {
-    /* Disable scrollbar */
     display: none;
     }
     .nav:hover + .ul-menu-items,
@@ -317,12 +316,10 @@ FONT SECTION
     display: none;
     position: relative;
     overflow: scroll;
-    /* Disable scrollbar */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
     }
     .li-menu-item-window:-webkit-scrollbar {
-    /* Disable scrollbar */
     display: none;
     }
     .li-menu-item-window:focus section {
@@ -360,6 +357,34 @@ FONT SECTION
     .section-image {
     width: 100%;
     }
+*/
+
+    /* Container */
+    main {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-gap: 0;
+      grid-template-areas:
+      "1-1 1-2 1-3 1-4 1-5 1-6 1-7 1-8 1-9 1-10",
+      "2-1 2-2 2-3 2-4 2-5 2-6 2-7 2-8 2-9 2-10",
+      "3-1 3-2 3-3 3-4 3-5 3-6 3-7 3-8 3-9 3-10",
+      "4-1 4-2 4-3 4-4 4-5 4-6 4-7 4-8 4-9 4-10",
+      "5-1 5-2 5-3 5-4 5-5 5-6 5-7 5-8 5-9 5-10",
+      "6-1 6-2 6-3 6-4 6-5 6-6 6-7 6-8 6-9 6-10",
+      "7-1 7-2 7-3 7-4 7-5 7-6 7-7 7-8 7-9 7-10",
+      "8-1 8-2 8-3 8-4 8-5 8-6 8-7 8-8 8-9 8-10",
+      "9-1 9-2 9-3 9-4 9-5 9-6 9-7 9-8 9-9 9-10",
+      "10-1 10-2 10-3 10-4 10-5 10-6 10-7 10-8 10-9 10-10";
+
+      background-image: url("https://i.ibb.co/ng24tRp/work-1627703.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   </style>
 </head>
 <!-- 
@@ -377,26 +402,38 @@ MAIN SECTION
 
 
   -->
-  <header id="header-main" class="header">
-    <div id="div-title-header">
-      <h1 id="title">HTML & CSS</h1>
-    </div>
-    <div id="div-logo-header">
-      <p id="p-logo-div">
-        <span class="span-logobracket-p">
-          [
-          <span class="span-logotext-p"> c0deblack </span>
-          ]
-        </span>
-      </p>
-    </div>
-
+  <header id="div-title-header">
+    <h1 id="title">HTML & CSS</h1>
+  </header>
+  <div id="div-logo-header">
+    <p id="p-logo-div">
+      <span class="span-logobracket-p">
+        [
+        <span class="span-logotext-p"> c0deblack </span>
+        ]
+      </span>
+    </p>
+  </div>
+  <div>
+    <ul class="nav" tabindex="-1">
+      <li class="li-menu-open">
+        <h2>NAV</h2>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="ul-menu-items" tabindex="-1">
+      <li tabindex="-1" class="li-menu-item-window">
+        <h3>HELLO WORLD</h3>
+      </li>
+      <li tabindex="-1" class="li-menu-item-window">
+          <h3>CSS Menus</h3>
+      </li>
+    </ul>
+  </div>
+    <!--
     <div id="nav">
-      <ul class="nav" tabindex="-1">
-        <li class="li-menu-open">
-          <h2>NAV</h2>
-        </li>
-      </ul>
+
 
       <ul class="ul-menu-items" tabindex="-1">
         <li tabindex="-1" class="li-menu-item-window">
@@ -463,6 +500,7 @@ MAIN SECTION
         </li>
       </ul>
     </div>
+  -->
   </header>
   <!-- 
 
