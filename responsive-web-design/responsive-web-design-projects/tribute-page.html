@@ -1,0 +1,637 @@
+<!--
+        Tribute Page
+  / _ \_____________/`/\+-/\'\'\
+\_\(_)/_/ c0deblack -+-    -+-+-
+ _//o\\_            \'\/+-\/`/`/
+  /   \              \/-+--\/`/
+-->
+<head>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+  <!-- 
+
+FONT SECTION
+
+-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Audiowide&family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+        /* START CSS Reset */
+        *,
+        *:before,
+        *:after,
+        *:hover {
+          box-sizing: border-box;
+        }
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+        display: block;
+        }
+        body {
+        line-height: 1;
+        }
+        a {
+        text-decoration: none;
+        }
+        a:hover {
+          color: inherit;
+        }
+        ol,
+        ul {
+        list-style: none;
+        }
+        blockquote,
+        q {
+        quotes: none;
+        }
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+        content: "";
+        content: none;
+        }
+        table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        }
+        /* END CSS Reset */
+
+        /* Declare Global Variables */
+        :root {
+        --default-bg-color: hsla(0, 0%, 0%, 1);
+        --default-txt-color: hsla(0, 0%, 100%, 1);
+
+        --link-color: hsl(337.9, 81.7%, 70%)
+        --link-visited-color: hsl(337.9, 81.7%, 70%);
+        --link-hover-color: hsl(337.9, 81.7%, 70%);
+
+        --menu-shadow: hsla(2, 95%, 33%, 0.45) 1px 1px 1px 1px,
+        hsla(2, 95%, 33%, 0.45)-1px -1px 1px 1px;
+        --menu-border: solid 1px hsl(-23.7, 100%, 15.9%);
+        --menu-bg: hsla(2, 95%, 33%, 0.45);
+        --menu-item-bg: hsla(2, 60%, 20%, 0.45);
+        --menu-panel-bg: hsla(2, 30%, 15%, 0.85);
+        }
+        /* Set Defaults */
+        html {
+        background-color: var(--default-bg-color);
+        color: var(--default-txt-color);
+        font-family: Sans, Monospace;
+        }
+        a:link {
+        color: var(--link-color);
+        }
+        a:visited {
+        color: var(--link-visited-color);
+        }
+        a:hover {
+        color: var(--link-hover-color);
+        }
+
+    /*
+        main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-gap: 0;
+        grid-template-areas:
+        "header",
+        "content",
+        "footer";
+
+        background-image: url("https://i.ibb.co/ng24tRp/work-1627703.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        }
+
+        #header-main {
+        grid-area: header;
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 7px;
+        width: 100%;
+        }
+        #header-main > div {
+        width: 25vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        #header-main #div-title-header {
+        position: absolute;
+        left: 2%;
+        top: 1.5vh;
+        }
+        #header-main #title {
+        font-size: 1.5rem;
+        }
+        #header-main #div-logo-header {
+        width: 100%;
+        }
+        #header-main #p-logo-div {
+        vertical-align: middle;
+        }
+        #p-logo-div .span-logobracket-p {
+        font-size: 5.5vw;
+        font-family: 'Audiowide', cursive;
+        }
+        #p-logo-div .span-logotext-p {
+        font-size: 3vw;
+        font-family: 'Press Start 2P', monospace;
+        }
+        #nav {
+        position: absolute;
+        top: 1.5vh;
+        right: 2%;
+        padding: 5px 3px 0px 3px;
+        border-radius: 20px;
+        max-height: 300px;
+        font-weight: 600;
+        box-shadow: var(--menu-shadow);
+        border: var(--menu-border);
+        background: var(--menu-bg);
+        display: flex;
+        flex-direction: column;
+        }
+        .nav {
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: block;
+        }
+        .nav > h2 {
+        padding-top: 7px;
+        margin-bottom: 6px;
+        width: 50px;
+        }
+        .ul-menu-items {
+        display: block;
+        height: 1px;
+        width: 1px;
+        color: black;
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        }
+        .ul-menu-items:-webkit-scrollbar {
+        display: none;
+        }
+        .nav:hover + .ul-menu-items,
+        .ul-menu-items:hover
+        {
+        height: 50vh;
+        min-height: 100px;
+        width: 200px;
+        overflow: scroll;
+        }
+        .li-menu-item-window {
+        display: block;
+        color: black;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        }
+        .li-menu-item-window:hover {
+        color: var(--link-hover-color);
+        }
+        .li-menu-item-window > h2 {
+        display: block;
+        }
+        .li-menu-item-window > section {
+        display: none;
+        position: relative;
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        }
+        .li-menu-item-window:-webkit-scrollbar {
+        display: none;
+        }
+        .li-menu-item-window:focus section {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 78%;
+        height: 90%;
+        box-shadow: var(--menu-shadow);
+        border: var(--menu-border);
+        background: black;
+        color: white;
+        font-weight: 300;
+        border-radius: 20px;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        }
+        .li-menu-item-window > section {
+          background-color: hsla(0, 0%, 0%, 1);
+        }
+        .li-menu-item-window h4 {
+          font-weight: 400;
+          padding-bottom: 20px;
+          text-align: center;
+        }
+        .li-menu-item-window h5 {
+          font-weight: 300;
+          padding-bottom: 10px;
+          text-align: center;
+        }
+        .li-menu-item-window p {
+          padding: 5px;
+        }
+        .section-image {
+        width: 100%;
+        }
+    */
+
+        /* Container */
+        main {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items:stretch;
+          flex-direction: column;
+          background-image: url("https://i.ibb.co/ng24tRp/work-1627703.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .nav-bar {
+          display: grid;
+          grid-template-rows: 1fr;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-gap: 0px;
+          padding: 1% 2%;
+        }
+        .nav-bar > div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .nav-text,
+        .c0deblack,
+        #title {
+          font-size: 6vh;
+        }
+        #title {
+          font-family: monospace;
+          font-weight: 900;
+          text-decoration: underline;
+        }
+        .logo .bracket {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-size: 10vh;
+        }
+        .logo .c0deblack {
+          font-family: monospace;
+          vertical-align: middle;
+        }
+        .nav-bar:hover .nav-text {
+          color: red;
+        }
+        .display-grid {
+          display: grid;
+          grid-gap: 0;
+          grid-template-areas:
+          "1-1 1-2 1-3 1-4 1-5 1-6 1-7 1-8 1-9 1-10",
+          "2-1 2-2 2-3 2-4 2-5 2-6 2-7 2-8 2-9 2-10",
+          "3-1 3-2 3-3 3-4 3-5 3-6 3-7 3-8 3-9 3-10",
+          "4-1 4-2 4-3 4-4 4-5 4-6 4-7 4-8 4-9 4-10",
+          "5-1 5-2 5-3 5-4 5-5 5-6 5-7 5-8 5-9 5-10",
+          "6-1 6-2 6-3 6-4 6-5 6-6 6-7 6-8 6-9 6-10",
+          "7-1 7-2 7-3 7-4 7-5 7-6 7-7 7-8 7-9 7-10",
+          "9-1 9-2 9-3 9-4 9-5 9-6 9-7 9-8 9-9 9-10",
+          "10-1 10-2 10-3 10-4 10-5 10-6 10-7 10-8 10-9 10-10";
+          width: 100%;
+          height: 90%;
+        }
+        .display {
+          display: none;
+        }
+
+        /* DISPLAY THE MENU */
+
+        /* for displaying the menu header */
+
+        .nav-bar:focus ~ .display-grid .menu-header {
+          display: block;
+        }
+        .menu-header:hover,
+        .menu-header:focus
+        {
+          display: block;
+        }
+        .menu-header {
+          width: 30%;
+          height: 80%;
+          padding: 1% 2%;
+          justify-content: center;
+          align-items: center;
+          grid-area: 2 / 1 / 5 / 4;
+        }
+
+        /* displaying menu links */
+
+        .nav-bar:focus ~ .display-grid #link-1,
+        .nav-bar:focus ~ .display-grid #link-2,
+        .menu-header:focus ~ .menu-link
+        {
+          display: flex;
+        }
+        .menu-items,
+        .menu-link p
+        {
+          justify-content: center;
+          align-items: center;
+        }
+        #link-1 {
+          grid-area: 2 / 3 / 4 / 4;
+        }
+        #link-2 {
+          grid-area: 2 / 5 / 4 / 6;
+        }
+
+        /* for displaying window 1 (Hello World) */
+  </style>
+</head>
+<!-- 
+
+MAIN SECTION
+
+-->
+<main id="main">
+  <!-- 
+
+
+
+  HEADER SECTION
+
+
+
+  -->
+  <header class="nav-bar" tabindex="-1">
+    <div>
+      <p class="nav-text">CLICK TO OPEN MENU</p>
+    </div>
+
+    <div>
+      <p class="logo">
+        <span class="bracket">
+          [
+          <span class="c0deblack">c0deblack</span>
+          ]
+        </span>
+      </p>
+    </div>
+
+    <div>
+      <h1 id="title">HTML & CSS</h1>
+    </div>
+  </header>
+
+  <div class="display-grid">
+    <!-- header used when displaying menu links -->
+    <div class="menu-header display" tabindex="-1">
+      <header>
+        <h3 class="menu-window-header">MAIN MENU HEADER</h3>
+
+        <p class="menu-window-description">
+          Description of the main menu goes here.
+        </p>
+      </header>
+    </div>
+
+    <!-- menu links for all of the windows -->
+    <div class="menu-link display" tabindex="-1" id="link-1" tabindex="-1">
+      <p class="menu-link-text">HELLO WORLD</p>
+    </div>
+
+    <div class="menu-link display" tabindex="-1" id="link-2" tabindex="-1">
+      <p class="menu-link-text">CSS Menus</p>
+    </div>
+
+    <!-- window 1 -->
+    <div id="window-1-header" tabindex="-1" class="display">
+      WINDOW 1: Header
+    </div>
+    <div id="window-1-link" tabindex="-1" class="display">WINDOW 1: Link</div>
+    <div id="window-1-content" tabindex="-1" class="display">
+      WINDOW 1: Content
+    </div>
+
+    <!-- window 2 -->
+    <div id="window-2-header" tabindex="-1" class="display"></div>
+    <div id="window-2-link" tabindex="-1" class="display"></div>
+    <div id="window-2-content" tabindex="-1" class="display"></div>
+  </div>
+
+  <!--
+    <div id="nav">
+
+
+      <ul class="ul-menu-items" tabindex="-1">
+        <li tabindex="-1" class="li-menu-item-display">
+          <h3>HELLO WORLD</h3>
+
+          <section>
+            <img
+              class="section-image"
+              src="https://i.ibb.co/x8CqXdg/1-U-R58ahr5dt-Avt-SLGK2w-Xg.png"
+              alt="The word 'hello' in text and an image of the world globe below it."
+            />
+            <h4>A TRIBUTE TO HTML &amp CSS</h4>
+            <h5>Hello visitor!</h5>
+            <p>
+              Welcome to my tribute to HTML and CSS. It is part of a series of
+              projects from FreeCodeCamp. Coded entirely in HTML and CSS, this
+              website features some interesting things that can be done without
+              using javascript.
+            </p>
+          </section>
+        </li>
+
+        <li tabindex="-1" class="li-menu-item-display">
+          <h3>CSS Menus</h3>
+
+          <section>
+            <h4>CSS Menu Examples</h4>
+
+            <h5>Slice Menu</h5>
+            <div class="example">
+              <ul class="slice-menu">
+                <li class="slice-menu-box"></li>
+                <li class="slice-menu-open">Open Menu</li>
+                <li class="slice-menu-item">Menu Item 1</li>
+                <li class="slice-menu-item">Menu Item 2</li>
+                <li class="slice-menu-item">Menu Item 3</li>
+              </ul>
+            </div>
+          </section>
+        </li>
+
+        <li tabindex="-1" class="li-menu-item-display">
+          <h3>CSS Animations</h3>
+          <section>
+            <h4>CSS Animation Examples</h4>
+            <p></p>
+          </section>
+        </li>
+
+        <li tabindex="-1" class="li-menu-item-display">
+          <h3>CSS Transistions</h3>
+          <section>
+            <h4>CSS Transistions Examples</h4>
+            <p></p>
+          </section>
+        </li>
+
+        <li tabindex="-1" class="li-menu-item-display">
+          <h3>CSS Art</h3>
+          <section>
+            <h4>CSS Art Examples</h4>
+            <p></p>
+          </section>
+        </li>
+      </ul>
+    </div>
+  -->
+  <!-- 
+
+
+
+  CONTENT SECTION
+
+
+
+  -->
+  <content class="content"> </content>
+  <!-- 
+
+
+
+  FOOTER SECTION
+
+
+
+  -->
+  <footer></footer>
+</main>

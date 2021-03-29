@@ -1,0 +1,479 @@
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap");
+	@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+	@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+	:root {
+	  --default-text-color: white;
+	  --default-bg-color: black;
+	  --h1-text-color: black;
+	  --logo-color: white;
+	  --nav-text-color: grey;
+	  --nav-hovertext-color: #6c5f48;
+	  --nav-hoverbg-color: #a48d60;
+	  --glass-color: hsla(40, 0%, 50%, 0.5);
+	  --glass-shadow: hsla(40, 0%, 90%, 1);
+	  --glass-border: rgba(0, 0, 255, 0.05);
+	}
+	*,
+	*:before,
+	*:after {
+	  box-sizing: border-box;
+	  margin: 0;
+	  padding: 0;
+	}
+	body {
+	  background: var(--default-bg-color);
+	  color: var(--default-text-color);
+	  font-family: "Bebas Neue", cursive;
+	}
+	.container {
+	  min-width: 320px;
+	  width: 100%;
+	  height: 100%;
+	}
+	.nav-bar {
+	  position: relative;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  background-color: var(--default-bg-color);
+	  font-family: "Lobster", cursive;
+	  display: flex;
+	  z-index: 100;
+	}
+	.nav-bar > .nav-list {
+	  width: 100%;
+	  display: flex;
+	  justify-content: space-around;
+	  order: 2;
+	}
+	.nav-bar > .nav-list > .nav-item {
+	  list-style: none;
+	  margin: 0 5px;
+	}
+	.nav-item > a {
+	  text-decoration: none;
+	  color: var(--nav-text-color);
+	  transition: all 1.5s;
+	}
+	.nav-item > a:hover {
+	  color: var(--nav-hovertext-color);
+	  background-color: var(--nav-hoverbg-color);
+	  transform: scale(1.2);
+	}
+	.logo {
+	  font-family: "Sedgwick Ave", cursive;
+	  letter-spacing: 0.741rem;
+	  text-align: center;
+	}
+	.nav-bar > .logo {
+	  order: 1;
+	}
+	#welcome-section {
+	  position: relative;
+	  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 20%),
+		linear-gradient(
+		  180deg,
+		  rgba(0, 0, 0, 1) 6%,
+		  rgba(0, 0, 0, 0.8) 7%,
+		  rgba(0, 0, 0, 0.6) 8%,
+		  rgba(0, 0, 0, 0.4) 9%,
+		  rgba(0, 0, 0, 0) 10%
+		),
+		url("https://i.ibb.co/X7Jj3gk/background-image-3330583.jpg");
+	  background-size: cover;
+	  background-position: center;
+	  height: 100vh;
+	}
+	.social {
+	  position: absolute;
+	  top: 5%;
+	  left: 0;
+	  width: 100%;
+	}
+	.social > .social-list {
+	  display: flex;
+	  justify-content: space-around;
+	  list-style: none;
+	  margin: 0 10px;
+	}
+	.section {
+	  width: 100%;
+	  min-height: 300px;
+	}
+	#welcome-section > .header {
+	  position: absolute;
+	  top: 42%;
+	  width: 100%;
+	  overflow: hidden;
+	}
+	.section > .header > .logo {
+	  font-size: 3.25rem;
+	  color: var(--h1-text-color);
+	}
+	.tagline {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+
+	.tagline > .tagline-item {
+	  color: red;
+	  list-style-type: none;
+	  padding: 0 10px;
+	  transform: scale(1.075);
+	}
+	.tagline > .tagline-item:nth-child(2) {
+	  font-weight: bold;
+	  border-right: 3px black solid;
+	  border-left: 3px black solid;
+	}
+	.section > .skills {
+	  position: absolute;
+	  bottom: 5%;
+	  width: 100%;
+	  overflow: hidden;
+	}
+	.section > .skills > .skills-list {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
+	  grid-gap: 10px 30px;
+	  list-style: none;
+	  text-align: center;
+	  justify-content: center;
+	  align-content: center;
+	}
+	#projects {
+	  z-index: -2;
+	  position: relative;
+	  margin-top: 50px;
+	  background: linear-gradient(
+		  180deg,
+		  rgba(0, 0, 0, 1) 0 5%,
+		  rgba(0, 0, 0, 0) 100%
+		),
+		linear-gradient(0deg, rgba(0, 0, 0, 1) 0 5%, rgba(0, 0, 0, 0) 100%),
+		url("https://i.ibb.co/wyYsFZ3/decorated-3561710.jpg");
+	}
+	#projects:before {
+	  z-index: -1;
+	  content: "";
+	  top: 0%;
+	  left: 0%;
+	  right: 0%;
+	  margin: 10px 50px;
+	  position: absolute;
+	  height: 100%;
+	  background: inherit;
+	  box-shadow: inset 0 0 100rem var(--glass-color),
+		0 -0.2rem 0px 0.1rem var(--glass-shadow);
+	  border: 5px var(--glass-border) solid;
+	  filter: blur(0.2rem);
+	  border-radius: 50px;
+	}
+	#projects > .header > h2 {
+	  display: block;
+	  position: relative;
+	  padding-top: 6%;
+	  text-align: center;
+	  font-size: 3rem;
+	  color: hsla(0, 0%, 25%, 0.99);
+	  color: rgba(0, 0, 0, 0.8);
+	  text-shadow: -1px -4px 3px rgba(128, 128, 128, 0.4),
+		-0px -0px 4px rgba(128, 128, 128, 0.4);
+	  letter-spacing: 0.8rem;
+	}
+	.project-grid {
+	  position: relative;
+	  margin-top: 50px;
+	  z-index: 1;
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	  justify-items: center;
+	  grid-gap: 4rem;
+	  width: 80%;
+	  max-width: 1280px;
+	  margin: 0 auto;
+	  overflow: hidden;
+	}
+	.project-tile {
+	  margin: 30px;
+	  min-width: 50px;
+	  min-height: 50px;
+	  border-radius: 20px;
+	  overflow: hidden;
+	  text-align: center;
+	}
+	.project-image {
+	  height: auto;
+	  margin: 0 auto;
+	  max-width: 500px;
+	  width: 100%;
+	}
+	.see-more {
+	  text-align: right;
+	  margin-right: 20%
+	}
+	@media (min-width: 605px) {
+	  .nav-bar {
+		position: fixed;
+		justify-content: space-between;
+		padding-left: 10px;
+	  }
+	  #welcome-section {
+		margin-top: 30px;
+	  }
+	  #projects > .header > h2 {
+		font-size: 4.25rem;
+		letter-spacing: 1.5rem;
+	  }
+	}
+	@media (max-width: 605px) {
+	  .nav-bar {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	  }
+	  .social > .social-list {
+		flex-wrap: wrap;
+	  }
+	  .section > .header > .logo {
+		font-size: 3rem;
+	  }
+	  .section > .skills > .skills-list {
+		font-size: 0.8rem;
+	  }
+	}
+	@media (max-width: 420px) {
+	  .section > .header {
+		top: 43%;
+	  }
+	  .section > .header > .logo {
+		font-size: 3rem;
+	  }
+	  #projects > .header > h2 {
+		padding-top: 50px;
+		padding-left: 10px;
+		font-size: 2rem;
+	  }
+	}
+	@media (max-width: 350px) {
+	  .nav-bar > .nav-list {
+		flex-direction: column;
+		align-items: center;
+	  }
+	  .nav-bar > .nav-list > .nav-item {
+		padding: 7px 0px;
+	  }
+	  #projects > .header > h2 {
+		padding-top: 50px;
+		padding-left: 15px;
+		font-size: 1.3rem;
+	  }
+	}
+	@media (min-width: 215px) {
+	  .nav-bar > .logo {
+		font-size: 1.2rem;
+		padding-top: 10px;
+	  }
+	  .nav-bar > .nav-list {
+	  }
+	  .nav-bar > .nav-list > .nav-item > a {
+		display: inline-block;
+		padding: 10px 10px 10px 10px;
+		font-size: 1rem;
+	  }
+	}
+	@media (max-width: 215px) {
+	  .nav-bar {
+		padding: 10px 10px;
+	  }
+	  nav-bar > .logo {
+		font-size: 0.7rem;
+	  }
+	  .nav-bar > .nav-list > .nav-item > a {
+		padding-right: 10px;
+		font-size: 0.8rem;
+	  }
+	}
+
+</style>
+
+<html>
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js">
+	</script>
+
+	<div id="container" class="container">
+	  <nav id="navbar" class="nav-bar">
+		<ul class="nav-list">
+		  <li class="nav-item">
+			<a href="#welcome-section">HOME</a>
+		  </li>
+		  <li class="nav-item">
+			<a href="#projects">PROJECTS</a>
+		  </li>
+		  <li class="nav-item">
+			<a href="#blog">BLOG</a>
+		  </li>
+		  <li class="nav-item">
+			<a href="#contact">CONTACT</a>
+		  </li>
+		</ul>
+		<div class="logo">
+		  <p>c0deblack</p>
+		</div>
+	  </nav>
+	  
+	  <main class="main">
+		<section id="welcome-section" class="section">
+		  <div class="social">
+			<ul class="social-list">
+			  <li class="social-item">
+				github
+			  </li>
+			  <li class="social-item">
+				Linkedin
+			  </li>
+			  <li class="social-item">
+				CodePen.io
+			  </li>
+			  <li class="social-item">
+				<a 
+				   id="profile-link" 
+				   class="social-link" 
+				   href="https://codepen.io/c0deblack"
+				   target="_blank">
+				  FreeCodeCamp
+				</a>
+			  </li>
+			</ul>
+		  </div>
+		  <header class="header">
+			<h1 class="logo">
+			  c0deblack
+			</h1>
+			<ul class="tagline">
+			  <li class="tagline-item">
+				web developer
+			  </li>
+			  <li class="tagline-item">
+				programmer
+			  </li>
+			  <li class="tagline-item">
+				sys admin
+			  </li>
+			</ul>
+		  </header>
+		  <div class="skills">
+			<ul class="skills-list">
+			  <li class="skills-item">
+				HTML
+			  </li>
+			  <li class="skills-item">
+				CSS
+			  </li>
+			   <li class="skills-item">
+				Javascript
+			  </li>
+			  <li class="skills-item">
+				React
+			  </li>
+			  <li class="skills-item">
+				PHP
+			  </li>
+			   <li class="skills-item">
+				SQL
+			  </li>
+			  <li class="skills-item">
+				JQuery
+			  </li>
+			  <li class="skills-item">
+				SASS
+			  </li>
+			   <li class="skills-item">
+				Bootstrap
+			  </li>
+			   <li class="skills-item">
+				Python
+			  </li>
+			  <li class="skills-item">
+				Numpy
+			  </li>
+			  <li class="skills-item">
+				Pandas
+			  </li>
+			</ul>
+		  </div>
+		</section>
+		<section id="projects" class="section">
+		  <header class="header">
+			<h2>Projects</h2>
+		  </header>
+		  <div class="project-grid">
+			<div class="project-tile">
+			  <figure class="project-figure">
+				<a href="https://codepen.io/c0deblack/full/qBqjQee">
+				  <img 
+					   class="project-image" 
+					   src="https://i.ibb.co/drBRhVm/abstract-1846847.jpg" 
+					   alt="tribute webpage" />
+				</a>  
+			  </figure>
+			  <figcapton class="project-caption">
+				Tribute Page
+			   </figcaption>
+			</div>
+			<div class="project-tile">
+			  <figure class="project-figure">
+				<a href="https://codepen.io/c0deblack/full/qBqjQee">
+				  <img 
+					   class="project-image" 
+					   src="https://i.ibb.co/drBRhVm/abstract-1846847.jpg" 
+					   alt="tribute webpage" />
+				</a>  
+			  </figure>
+			  <figcapton class="project-caption">
+				Tribute Page
+			   </figcaption>
+			</div>
+			<div class="project-tile">
+			   <figure class="project-figure">
+				<a href="https://codepen.io/c0deblack/full/qBqjQee">
+				  <img 
+					   class="project-image" 
+					   src="https://i.ibb.co/drBRhVm/abstract-1846847.jpg" 
+					   alt="tribute webpage" />
+				</a>  
+			  </figure>
+			  <figcapton class="project-caption">
+				Tribute Page
+			   </figcaption>
+			</div>
+			<div class="project-tile">
+			  <figure class="project-figure">
+				<a href="https://codepen.io/c0deblack/full/qBqjQee">
+				  <img 
+					   class="project-image" 
+					   src="https://i.ibb.co/drBRhVm/abstract-1846847.jpg" 
+					   alt="tribute webpage" />
+				</a>  
+			  </figure>
+			  <figcapton class="project-caption">
+				Tribute Page
+			   </figcaption>
+			</div>
+		  </div>
+		  <div class="see-more">
+			<span>See More</span>
+		  </div>
+		</section>
+		<section id="blog" class="section">
+		  
+		</section>
+		<section id="contact" class="section">
+		  
+		</section>
+	  </main>
+	</div>
+</html>

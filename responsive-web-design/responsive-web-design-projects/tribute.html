@@ -1,0 +1,762 @@
+<style>
+  /* START CSS Reset */
+  *,
+  *:before,
+  *:after,
+  *:hover {
+    box-sizing: border-box;
+  }
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  a {
+    text-decoration: none;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  /* END CSS Reset */
+
+  /*
+CSS rules to specify families
+font-family: 'Press Start 2P', cursive;
+*/
+  /*
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*/
+  /*
+CSS rules to specify families
+font-family: 'Audiowide', cursive;
+*/
+  /*
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+*/
+  /* Declare Global Variables */
+  :root {
+    --default-bg-color: hsla(0, 0%, 0%, 1);
+    --default-txt-color: hsla(0, 0%, 100%, 1);
+    --glass-color: hsla(40, 0%, 50%, 0.5);
+    --glass-shadow: hsla(40, 0%, 90%, 1);
+    --glass-border: rgba(0, 0, 255, 0.05);
+  }
+
+  /* Set Defaults */
+  html {
+    background-color: var(--default-bg-color);
+    color: var(--default-txt-color);
+  }
+
+  /* Container */
+  main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: grid;
+    grid-gap: 0;
+    grid-template-areas:
+      "header header header"
+      "content content content"
+      "footer footer footer";
+
+    background-image: url("https://i.ibb.co/ng24tRp/work-1627703.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Headers */
+  .header {
+    text-align: center;
+    font-family: "Audiowide", cursive;
+  }
+  .section-header {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  #header-main {
+    grid-area: header;
+    position: fixed;
+    top: 7px;
+    width: 100%;
+    text-align: center;
+    z-index: -1;
+  }
+  #title {
+    width: 100%;
+    font-size: 3rem;
+  }
+  #span-main-c0deblack {
+    font-size: 1.6rem;
+  }
+  .c0deblack {
+    vertical-align: middle;
+    font-family: "Press Start 2P", cursive;
+  }
+
+  /* Content */
+  .content {
+    height: 100vh;
+    grid-area: content;
+    display: flex;
+    justify-content: space-between;
+  }
+  .section {
+    position: absolute;
+
+    top: 2vh;
+    right: 2vh;
+    height: 40px;
+    width: 80px;
+
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    overflow: hidden;
+    box-shadow: hsla(2, 95%, 33%, 0.45) 1px 1px 1px 1px,
+      hsla(2, 95%, 33%, 0.45)-1px -1px 1px 1px;
+    border: solid 1px hsl(-23.7, 100%, 15.9%);
+    background: hsla(2, 95%, 33%, 0.45);
+    border-radius: 20px;
+    text-decoration: none;
+  }
+  #section-about-me:hover > h2 {
+    left: 17vh;
+    text-align: center;
+  }
+  #section-about-me:hover > nav {
+    padding-top: 33px;
+  }
+  #section-about-me:hover {
+    animation-name: expand-about-me-section;
+    animation-duration: 0.5s;
+
+    animation-fill-mode: forwards;
+  }
+
+  /*
+#section-about-me:hover {
+  width: 250px;
+  height: 250px;
+}
+*/
+  @keyframes expand-about-me-section {
+    0% {
+      height: 40px;
+      width: 80px;
+    }
+    50% {
+      height: 40px;
+      width: 25%;
+    }
+    100% {
+      height: 300px;
+      width: 25%;
+    }
+  }
+  #nav-about-me {
+    width: 100%;
+    height: 100%;
+    padding-top: 70px;
+    text-align: center;
+  }
+  #ul-about-me-nav {
+    display: grid;
+    grid-template-column: 1fr;
+    grid-template-rows: repeat(4, 100px);
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    /* Disable scrollbar */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  #ul-about-me-nav::-webkit-scrollbar {
+    /* Disable scrollbar */
+    display: none;
+  }
+  .li-about-me-ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+  .li-about-me-ul:hover {
+    background: hsla(2, 95%, 33%, 0.45);
+    color: hsl(133, 65%, 8%);
+  }
+  a {
+    color: black;
+  }
+  /*
+a:hover .div-about-me-li, a:focus .div-about-me-li  {
+  position: fixed;
+  color: green;
+  display: block;
+  top: 0px;
+  left: 0px;
+}
+*/
+  #a-about-me-intro:focus-within + div {
+    display: block;
+    width: 65%;
+    background-color: hsla(2, 60%, 25%, 0.8);
+  }
+  #a-about-me-skills:focus + div {
+    position: fixed;
+    display: block;
+  }
+  #a-about-me-hobbies:focus + div {
+    position: fixed;
+    display: block;
+  }
+  #a-about-me-projects:focus + div {
+    position: fixed;
+    display: block;
+    /*
+  width: 60%;
+  left: 20vh;
+  top: 20vh;
+*/
+  }
+  .h3-about-me-li {
+    display: inline;
+    font-size: 1.3rem;
+    padding-bottom: 5px;
+    padding-top: 10px;
+  }
+  /*
+#div-links-to-code-list {
+  font-size: 1rem;
+  line-height: 3;
+  text-align: center;
+}
+#div-about-me-text {
+  padding: 5px 10px;
+  height: 200px;
+  font-size: 0.85rem;
+  text-indent: 10px;
+  line-height: 2.3;
+  letter-spacing: 1.1px;
+  overflow: scroll;
+  
+  /* remove scroll bar but keep scroll function
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+#div-about-me-text::-webkit-scrollbar {
+  display: none;
+}
+#div-about-me-text, #div-links-to-code-list {
+  font-family: Sans;
+}
+*/
+  .div-about-me-li {
+    position: fixed;
+    display: none;
+    width: 65%;
+    left: 4vh;
+    top: 3vh;
+    padding: 20px;
+    bottom: 20px;
+    font-family: Sans;
+    text-align: left;
+    line-height: 2.3;
+    letter-spacing: 0.5px;
+    box-shadow: hsla(2, 95%, 33%, 0.45) 1px 1px 1px 1px,
+      hsla(2, 95%, 33%, 0.45)-1px -1px 1px 1px;
+    border: solid 1px hsl(-23.7, 100%, 15.9%);
+    background: hsla(2, 95%, 33%, 0.45);
+    border-radius: 20px;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .div-about-me-li:-webkit-scrollbar {
+    display: none;
+  }
+  .div-about-me-li:hover {
+    position: fixed;
+    display: block;
+    width: 65%;
+    background-color: hsla(2, 60%, 25%, 0.8);
+  }
+  @keyframes div-about-me-li-hover {
+    0% {
+      width: 35%;
+      background: hsla(2, 95%, 33%, 0.45);
+    }
+    100% {
+      width: 65%;
+      background: hsla(2, 60%, 15%, 0.85);
+    }
+  }
+
+  #footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 7vh;
+    grid-area: footer;
+  }
+  .li-about-me-pane {
+    display: none;
+  }
+
+  /*
+#div-footer-ul-container {
+  position: inherit;
+  height: 100%;
+  width: 100%;
+}
+#ul-footer-nav {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+}
+.li-footer-link {
+  position: relative;
+  padding: 12px 15px 4px 15px;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+  background-image: url("https://i.ibb.co/931Rp4k/scratches.png"), -moz-linear-gradient(top, #aaaaaa, #f2f2f2 25%, #ffffff 38%, #c5c5c5 63%, #f7f7f7 87%, #aaaaaa);
+
+  transform: scale(1);
+}
+.li-footer-panel {
+  display: none;
+}
+.li-footer-link:hover + .li-footer-panel {
+  background-color: hsla(133,65%,8%,0.83);
+  color: whitesmoke;
+  padding: 10px;
+  box-shadow: hsl(132.3, 63.9%, 12%) 1px 1px 1px 1px, hsl(132.3, 63.9%, 12%) -1px -1px 1px 1px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+#about:hover + .li-footer-panel {
+  display: block;
+  position: fixed;
+  left: 2%;
+  bottom: 10%;
+  width: 50%;
+  border-radius: 20px;
+}
+#terms:hover + .li-footer-panel {
+  display: block;
+  position: fixed;
+  left: 15%;
+  bottom: 10%;
+  width: 50%;
+  border-radius: 20px;
+}
+#privacy:hover + .li-footer-panel {
+  display: block;
+  position: fixed;
+  bottom: 10%;
+  width: 50%;
+  border-radius: 20px;
+}
+#more:hover + .li-footer-panel {
+  display: block;
+  position: fixed;
+  bottom: 10%;
+  right: 15%;
+  width: 50%;
+  border-radius: 20px;
+}
+#copyright:hover + .li-footer-panel {
+  display: block;
+  position: fixed;
+  bottom: 10%;
+  right: 3%;
+  width: 50%;
+  border-radius: 20px;
+}
+.h4-footer-section {
+  text-align: center;
+  padding-bottom: 10px 5px;
+}
+.centered-list {
+  text-align: center;
+}
+.centered-list  a {
+  color: hsla(2,100%,80%,1);
+}
+*/
+  /*
+#copyright:hover:after {
+  position: fixed;
+  top: -300px;
+  left: 0;
+  right: 0;
+  bottom: 600px;
+  content: '';
+  z-index: -1;
+  border-radius: 20px;
+  color: blue;
+  background-color: yellow;
+}
+*/
+</style>
+
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<!-- 
+
+Hello Camper!
+
+For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding! 
+
+- The freeCodeCamp Team 
+
+-->
+
+<main id="main">
+  <header id="header-main" class="header">
+    <h1 id="title">
+      <p class="code-block">
+        [ <span id="span-main-c0deblack" class="c0deblack">c0deblack</span> ]
+      </p>
+    </h1>
+  </header>
+  <content class="content">
+    <!--
+    <section id="section-about-me" class="section">
+      <a href="#" ><h2 class="header section-header">NAV</h2></a>
+      <nav id="nav-about-me">
+        <ul id="ul-about-me-nav">
+          <a href="#" tabindex="-1" id="a-about-me-intro">
+            <li class="li-about-me-ul">
+              <h3 class="h3-about-me-li">
+                Quick Intro
+              </h3>
+            </li>
+          </a>
+          <div class="div-about-me-li">
+            <h4 class="h4-about-me-div">
+              WELCOME
+            </h4>
+            <p class="p-about-me-div">
+              I go by the name c0deblack. I see programming as a means for one to express themself. Through it, a programmer is limited only by their imagination, or lack thereof. My skills include web development, electrical engineering, and computer administration.
+            </p>
+          </div>
+-->
+    <!--
+          </a>
+          <li class="li-about-me-pane">
+            <a href ="#" tabindex='-1' id="a-about-me-intro-pane">
+<div class="div-about-me-li">
+              <h4 class="h4-about-me-div">
+                WELCOME
+              </h4>
+              <p class="p-about-me-div">
+          Hi. Welcome to my tribute page. <strong>What is it a tribute of</strong> you ask? Me of course!
+<br>
+          I go by the name c0deblack. Think of it like a pen name (except for a programmer instead of a writer). I see programming as a means for one to express themself. Through it, a programmer is limited only by their imagination, or lack thereof.
+<br>
+          My skills include web development, electrical engineering, and computer administration.
+              </p>
+            </div>
+            </a>
+          </li>
+-->
+    <!--
+          <a href="#" tabindex="-1" id="a-about-me-skills">
+            <li class="li-about-me-ul">
+              <h3 class="h3-about-me-li">
+                Skills
+              </h3>
+            </li>
+          </a>
+          <div class="div-about-me-li">
+            <h4 class="h4-about-me-div">
+              Skills
+            </h4>
+            <p class="p-about-me-div">
+
+            </p>
+          </div>
+-->
+    <!--
+          <li class="li-about-me-pane">
+            <div class="div-about-me-li">
+              <h4 class="h4-about-me-div">
+                Skills
+              </h4>
+              <p class="p-about-me-div">
+                
+              </p>
+            </div>
+          </li>
+-->
+    <!--
+          <a href="#" tabindex="-1" id="a-about-me-hobbies">
+            <li class="li-about-me-ul">
+              <h3 class="h3-about-me-li">
+                Hobbies
+              </h3>
+            </li>
+          </a>
+          <div class="div-about-me-li">
+            <h4 class="h4-about-me-div">
+              Hobbies
+            </h4>
+            <p class="p-about-me-div">
+
+            </p>
+          </div>
+-->
+    <!--
+          <li class="li-about-me-pane">
+            <div class="div-about-me-li">
+              <h4 class="h4-about-me-div">
+                Hobbies
+              </h4>
+              <p class="p-about-me-div">
+                
+              </p>
+            </div>
+          </li>
+-->
+    <!--
+          <a href="#" tabindex="-1" id="a-about-me-projects">
+            <li class="li-about-me-ul">
+              <h3 class="h3-about-me-li">
+                Projects
+              </h3>
+            </li>
+          </a>
+          <div class="div-about-me-li">
+            <h4 class="h4-about-me-div">
+              Projects
+            </h4>
+            <p class="p-about-me-div">
+
+            </p>
+          </div>
+        </ul>
+      </nav>
+-->
+    <!--
+      <div id="div-about-me-text">
+        <p class="p-about-me-text">
+          Hi. Welcome to my tribute page. <strong>What is it a tribute of</strong> you ask? Me of course!
+        </p>
+        <p class="p-about-me-text">
+          I go by the name c0deblack. Think of it like a pen name (except for a programmer instead of a writer). I see programming as a means for one to express themself. Through it, a programmer is limited only by their imagination, or lack thereof.
+        </p>
+        <p class="p-about-me-text">
+          My skills include web development, electrical engineering, and computer administration.
+        </p>
+      </div>
+    </section>
+    
+-->
+    <!--
+    <section id="section-my-code" class="section">
+      <h2 class="header section-header">MY CODE</h2>
+      <div  id="div-links-to-code-list">
+         <ul class="ulist">
+          <li>GitHub</li>
+          <li>CodePen</li>
+          <li>[ <span class="c0deblack">c0deblack</span> ]</li>
+        </ul>
+      </div>
+    </section>
+-->
+  </content>
+  <footer id="footer" class="footer">
+    <!--
+    <div id="div-footer-ul-container">
+      <ul id="ul-footer-nav">
+        <li id="about" class="li-footer-link">About</li>
+        <li id="about-panel" class="li-footer-panel">
+          <section id="section-about">
+            <h4 class="h4-footer-section">ABOUT</h4>
+            <ul>
+              <li>
+                Author: c0deblack
+              </li>
+              <li>
+                License: MIT
+              </li>
+              <li>
+              This page is a tribute to HTML5 and CSS3. The interactive elements on this page are created purely in HTML and CSS.
+              </li>
+            </ul>
+
+          </section>
+        </li>
+
+        <li id="terms" class="li-footer-link">Terms</li>
+        <li id="terms-panel" class="li-footer-panel">
+          <section id="section-terms">
+            <h4 class="h4-footer-section">TERMS &amp; CONDITIONS</h4>
+            <p class="p-footer-section">
+              THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+            </p>
+          </section>
+        </li>
+
+        <li id="privacy" class="li-footer-link">Privacy</li>
+        <li id="privacy-panel" class="li-footer-panel">
+          <section id="section-privacy">
+            <h4 class="h4-footer-section">PRIVACY</h4>
+            <p class="p-footer-section">No private data is being collected.</p>
+          </section>
+        </li>
+        
+        <li id="more" class="li-footer-link">Learn more...</li>
+        <li id="more-panel" class="li-footer-panel">
+          <section id="section-more">
+            <h4 class="h4-footer-section">LEARN HOW TO PROGRAM</h4>
+            <ul class="centered-list">
+              <li>
+                <a class="links" href="#" alt="Learn how to program at free code camp.">FreeCodeCamp.com</a>
+              </li>
+              <li>
+                <a class="links" href="#" alt="Learn how to program or free at w3school.">W3school.com</a>
+              </li>
+              <li>
+                <a class="links" href="#" alt="Watch free programming videos online.">Youtube.com</a>
+              </li>
+            </ul>
+          </section>
+        </li>
+
+        <li id="copyright" class="li-footer-link">&copy2020</li>
+        <li id="copyright-panel" class="li-footer-panel">
+          <section id="section-copyright">
+            <h4 class="h4-footer-section">COPYRIGHT</h4>
+            <p class="p-footer-section"></p>
+          </section>
+        </li>
+
+      </ul>
+    </div>
+-->
+  </footer>
+</main>
