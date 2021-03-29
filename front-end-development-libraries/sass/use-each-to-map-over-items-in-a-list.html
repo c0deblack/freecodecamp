@@ -1,0 +1,42 @@
+<!--
+Sass also offers the @each directive which loops over each item in a list or map.
+
+A map has slightly different syntax. Here's an example:
+
+$colors: (color1: blue, color2: red, color3: green);
+
+@each $key, $color in $colors {
+  .#{$color}-text {color: $color;}
+}
+
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+-->
+<style type='text/scss'>
+
+    $map: (blue: blue, black: black, red: red);
+
+    @each $color, $val in $map {
+        .#{$color}-bg {
+            background-color: $val;
+        }
+    }
+
+    div {
+      height: 200px;
+      width: 200px;
+    }
+  </style>
+  
+  <div class="blue-bg"></div>
+  <div class="black-bg"></div>
+  <div class="red-bg"></div>
