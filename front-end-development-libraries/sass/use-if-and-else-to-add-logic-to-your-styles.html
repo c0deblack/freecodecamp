@@ -1,0 +1,46 @@
+<!--
+@mixin make-bold($bool) {
+  @if $bool == true {
+    font-weight: bold;
+  }
+}
+@mixin text-effect($val) {
+  @if $val == danger {
+    color: red;
+  }
+  @else if $val == alert {
+    color: yellow;
+  }
+  @else if $val == success {
+    color: green;
+  }
+  @else {
+    color: black;
+  }
+-->
+<style type='text/scss'>
+
+    @mixin border-stroke($val) {
+        @if $val == light {
+            border: 1px solid black;
+        }
+        @else if $val == medium {
+            border: 3px solid black;
+        }
+        @else if $val == heavy {
+            border: 6px solid black;
+        }
+        @else {
+            border: none;
+        }
+    }
+
+    #box {
+      width: 150px;
+      height: 150px;
+      background-color: red;
+      @include border-stroke(medium);
+    }
+  </style>
+  
+  <div id="box"></div>
