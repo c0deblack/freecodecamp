@@ -37,5 +37,7 @@ class Fruits extends React.Component {
     }
   };
 /*
-Nest two components inside of Fruits — first NonCitrus, and then Citrus. Both of these components are provided for you behind the scenes. Next, nest the Fruits class component into the TypesOfFood component, below the h1 header and above Vegetables.
+Nest two components inside of Fruits — first NonCitrus, and then Citrus.
+
+Nest the Fruits class component into the TypesOfFood component below the h1 header and above Vegetables.
 */
