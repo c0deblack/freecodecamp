@@ -23,5 +23,5 @@ class MyComponent extends React.Component {
     }
   }
 /*
-In the code editor, MyComponent is already stateful. Define an h1 tag in the component's render method which renders the value of name from the component's state.
+Define an h1 tag in the component's render method which renders the value of name from the component's state.
 */
