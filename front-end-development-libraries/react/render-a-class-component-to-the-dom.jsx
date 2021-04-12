@@ -32,5 +32,11 @@ class TypesOfFood extends React.Component {
   
   // Change code below this line
 /*
-Both the Fruits and Vegetables components are defined for you behind the scenes. Render both components as children of the TypesOfFood component, then render TypesOfFood to the DOM. There is a div with id='challenge-node' available for you to use.
+Both the Fruits and Vegetables components are defined for you behind the scenes.
+
+Render both components as children of the TypesOfFood component.
+
+Render TypesOfFood to the DOM.
+
+There is a div with id='challenge-node' available for you to use.
 */
