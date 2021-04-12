@@ -33,5 +33,7 @@ class ParentComponent extends React.Component {
     }
 };
 /*
-In the code editor, there is a simple functional component called ChildComponent and a class component called ParentComponent. Compose the two together by rendering the ChildComponent within the ParentComponent.
+There is a simple functional component called ChildComponent and a class component called ParentComponent.
+
+Compose the two together by rendering the ChildComponent within the ParentComponent.
 */
