@@ -36,5 +36,7 @@ class StatefulComponent extends React.Component {
     }
   };
 /*
-There is a component in the code editor that is trying to render a name property from its state. However, there is no state defined. Initialize the component with state in the constructor and assign your name to a property of name.
+There is a component in the code editor that is trying to render a name property from its state.
+
+Initialize the component with state in the constructor and assign your name to a property of name.
 */
