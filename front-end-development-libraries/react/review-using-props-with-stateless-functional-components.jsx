@@ -1,7 +1,6 @@
 /*
 Review Using Props with Stateless Functional Components
 
-
 A stateless functional component is any function you write which accepts props and returns JSX.
 
 A stateless component is a class that extends React.Component, but does not use internal state.
@@ -10,7 +9,9 @@ A stateful component is a class component that does maintain its own internal st
 
 You may see stateful components referred to simply as components or React components.
 
-A common pattern is to try to minimize statefulness and to create stateless functional components wherever possible.
+A common pattern is to try to minimize statefulness.
+  
+  create stateless functional components wherever possible
 
 class MyComponent extends React.Component {
     constructor(props) {
@@ -69,11 +70,11 @@ The code editor has a CampSite component that renders a Camper component as a ch
 
 Define the Camper component and assign it default props of { name: 'CamperBot' }.
 
-Inside the Camper component, render any code that you want,
+Inside the Camper component, render any code that you want.
 
-but make sure to have one p element that includes only the name value that is passed in as a prop.
+Make sure to have one p element that includes only the name value that is passed in as a prop.
 
-Finally, define propTypes on the Camper component to require name to be provided as a prop
+Define propTypes on the Camper component to require name to be provided as a prop.
 
-and verify that it is of type string.
+Verify that it is of type string.
 */
