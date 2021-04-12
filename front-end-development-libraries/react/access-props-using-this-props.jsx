@@ -44,5 +44,13 @@ class ReturnTempPassword extends React.Component {
     }
   };
 /*
-Render an instance of the ReturnTempPassword component in the parent component ResetPassword. Here, give ReturnTempPassword a prop of tempPassword and assign it a value of a string that is at least 8 characters long. Within the child, ReturnTempPassword, access the tempPassword prop within the strong tags to make sure the user sees the temporary password.
+Render an instance of the ReturnTempPassword component in the parent component ResetPassword.
+
+Give ReturnTempPassword a prop of tempPassword.
+
+Assign it a value of a string that is at least 8 characters long.
+
+Within ReturnTempPassword access the tempPassword prop.
+
+Place its value within the strong tags to make sure the user sees the temporary password.
 */
