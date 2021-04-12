@@ -36,9 +36,13 @@ class MyComponent extends React.Component {
     }
   };
 /*
-The code editor has a component with a state that keeps track of the text. Fix it by explicitly binding this to the handleClick() method in the component's constructor.
+The code editor has a component with a state that keeps track of the text.
 
-Next, add a click handler to the button element in the render method. It should trigger the handleClick() method when the button receives a click event. Remember that the method you pass to the onClick handler needs curly braces because it should be interpreted directly as JavaScript.
+Fix it by explicitly binding this to the handleClick() method in the component's constructor.
 
-Once you complete the above steps you should be able to click the button and see You clicked!.
+Next, add a click handler to the button element in the render method.
+
+It should trigger the handleClick() method when the button receives a click event.
+
+Remember that the method you pass to the onClick handler needs curly braces.
 */
