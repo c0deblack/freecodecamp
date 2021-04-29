@@ -1,0 +1,324 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js">
+</script>
+<style>
+  :root {
+  --bg-teal-solid: hsla(168, 100%, 40%, .9);
+  --bg-teal-alpha: hsla(168, 100%, 40%, 0.3);
+  --form-darkteal-alpha: hsla(168, 100%, 15%, 0.8);
+  --text-grey-solid: hsl(0, 0%, 80%);
+  --inputbg-darkred: hsl(348, 100%, 15%);
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+body {
+  font-weight: 400;
+  line-height: 1.5;
+}
+body::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: -1;
+  background: black;
+  background-image: 
+    linear-gradient(150deg,
+    var(--bg-teal-solid) 0% 30%,
+    var(--bg-teal-alpha)),
+    url("https://imagizer.imageshack.com/img924/2428/MQoTZ4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+header {
+  text-align: center;
+  min-width: 200px;
+}
+header h1 {
+  font-size: 3rem;
+}
+@media (max-width: 460px){
+  header h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 300px){
+  header h1 {
+    font-size: 1rem;
+  }
+}
+#survey-form {
+  width: 80%;
+  min-width: 200px;
+  margin: 0 auto 0 auto;
+  color: var(--text-grey-solid);
+  border-radius: 5px;
+  background-color: var(--form-darkteal-alpha);
+  font-size: 1.2rem;
+  padding: 5% 10% 15% 10%;
+}
+.form-label {
+  display: flex;
+  justify-content: start;
+}
+.form-input-text {
+  background-color: var(--inputbg-darkred);
+  color: white;
+  padding: 1%;
+  border-radius: 5px;
+  margin: 3% 0% 3% 0%;
+  font-size: 1rem;
+  width: 100%;
+}
+.form-input {
+  background-color: var(--inputbg-darkred);
+  color: white;
+  min-width: 10%;
+  max-width: 10%;
+}
+.form-textarea {
+  padding: 1%;
+  background-color: var(--inputbg-darkred);
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+  min-height: 200px;
+}
+.form-select {
+  background-color: var(--inputbg-darkred);
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+  padding: 1%;
+}
+.form-button {
+  font-size: 1rem;
+  border: none;
+  width: 100%;
+  min-height: 10vh;
+  background-color: green;
+  color: white;
+}
+</style>
+<main>
+  <header>
+    <h1 id="title">Electrical Engineering Survey</h1>
+    <p id="description">a simple survey</p>
+  </header>
+  <form id="survey-form">
+    <div class="form-group">
+      <label 
+             id="name-label" 
+             class="form-label" 
+             for="name"/
+             >
+        Name:
+      </label>
+      <input 
+             id="name"
+             name="name"
+             class="form-input-text" 
+             type="text"
+             placeholder="Enter your name"
+             required
+             />
+    </div>
+    <div class="form-group">
+      <label 
+             id="email-label" 
+             class="form-label" 
+             for="email"
+             />
+        E-Mail:
+      </label>
+      <input 
+             id="email"
+             name="email"
+             class="form-input-text" 
+             type="email"
+             placeholder="Enter your email"
+             required
+             />
+    </div>
+    <div class="form-group">
+      <label 
+             id="number-label" 
+             class="form-label" 
+             for="number"
+             />
+        Age:
+      </label>
+      <input 
+             id="number"
+             name="number"
+             class="form-input-text" 
+             type="number"
+             placeholder="(optional)"
+             min=18
+             max=99
+             />
+    </div>
+    <div class="form-group">
+      <p>
+        Which field(s) of electronics are you most interested in?
+        (Select all that apply)
+      </p>
+      <label 
+             class="form-label" 
+             for="power"
+             />
+         <input
+               id="power"
+               name="checkbox"
+               class="form-input" 
+               type="checkbox"
+               value="power"
+               />
+          Power Systems
+        </label>
+      <label 
+             class="form-label" 
+             for="microcomputer"
+             />
+         <input
+               id="microcomputer"
+               name="checkbox"
+               class="form-input" 
+               type="checkbox"
+               value="microcomputer"
+               />
+          Microcomputers
+        </label>
+      <label 
+             class="form-label" 
+             for="signal"
+             />
+         <input
+               id="signal"
+               name="checkbox"
+               class="form-input" 
+               type="checkbox"
+               value="signal"
+               />
+          Signal Processing
+        </label>
+      <label 
+             class="form-label" 
+             for="microcontroller"
+             />
+         <input
+                id="microcontroller"
+               name="checkbox"
+               class="form-input" 
+               type="checkbox"
+               value="microcontroller"
+               />
+          Microcontrollers
+        </label>
+    </div>
+    <div class="form-group">
+      <p>
+        What is your highest level of education?
+        (Select one)
+      </p>
+      <label 
+             class="form-label" 
+             for="highschool"
+             />
+         <input 
+               id="highschool"
+               name="radio"
+               class="form-input" 
+               type="radio"
+               value="highschool"
+               checked
+               />
+          High School Diploma
+        </label>
+      <label 
+             class="form-label" 
+             for="associate"
+             />
+         <input
+               id="associate"
+               name="radio"
+               class="form-input" 
+               type="radio"
+               value="associate"
+               />
+          AA/AS Degree
+        </label>
+      <label 
+             class="form-label" 
+             for="bachelor"
+             />
+         <input
+               id="bachelor"
+               name="radio"
+               class="form-input" 
+               type="radio"
+               value="bachelor"
+               />
+          Bachelor's Degree
+        </label>
+      <label 
+             class="form-label" 
+             for="master"
+             />
+         <input
+               id="master"
+               name="radio"
+               class="form-input" 
+               type="radio"
+               value="master"
+               />
+          Master's Degree
+        </label>
+    </div>
+    <div class="form-group">
+      <p>
+        What is the maximum voltage output on your voltage supply?
+      </p>
+      <select id="dropdown" class="form-select" name="powersupply">
+        <option disabled selected value>
+          == Choose a power supply voltage ==
+        </option>
+        <option class="form-option" value="3v">0 - 3.3</option>
+        <option class="form-option" value="5v">3.3 - 5</option>
+        <option class="form-option" value="9v">5 - 9</option>
+        <option class="form-option" value="12v">9 - 12</option>
+        <option class="form-option" value="16v">12 - 16</option>
+        <option class="form-option" value="24v">16 - 24</option>
+        <option class="form-option" value="48v">24 - 48</option>
+        <option class="form-option" value="96v">48 - 96</option>
+        <option class="form-option" value="120v">96 - 120</option>
+        <option class="form-option" value="240v">120 - 240</option>
+        <option class="form-option" value="400v">240 - 400</option>
+        <option class="form-option" value="1000v">400 - 1000</option>
+        <option class="form-option" value="10000v">1000 - 10000</option>
+        <option class="form-option" value="50000v">10000 - 50000</option>
+        <option class="form-option" value="50000v+">50000 + </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <p>Take a moment to describe what you love most about Electrical Engineering.</p>
+      <textarea 
+                id="textarea" 
+                name="textarea" 
+                class="form-textarea" 
+                placeholder="Enter text here..."></textarea>
+    </div>
+    <hr>
+    <div class="form-group">
+      <button 
+              id="submit" 
+              name="submit" 
+              class="form-button">
+        <span>Submit</span>
+      </button>
+    </div>
+  </form>
+</main>
