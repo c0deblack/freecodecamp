@@ -1,0 +1,382 @@
+<html lang="en">
+  <head>
+    <title>Survey Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style type="text/css">
+      /*
+      CSS RESET
+
+        This is used to set all rules to default values.
+
+    */
+      *,
+      *:before,
+      *:after,
+      *:hover {
+        box-sizing: border-box;
+      }
+      html,
+      cite,
+      center,
+      canvas,
+      body,
+      code,
+      dl,
+      details,
+      div,
+      del,
+      dt,
+      embed,
+      span,
+      dfn,
+      dd,
+      figure,
+      applet,
+      em,
+      ol,
+      figcaption,
+      object,
+      img,
+      ul,
+      footer,
+      iframe,
+      ins,
+      li,
+      header,
+      h1,
+      kbd,
+      fieldset,
+      hgroup,
+      h2,
+      q,
+      form,
+      menu,
+      h3,
+      s,
+      label,
+      nav,
+      h4,
+      samp,
+      legend,
+      output,
+      h5,
+      small,
+      table,
+      ruby,
+      h6,
+      strike,
+      caption,
+      section,
+      p,
+      strong,
+      tbody,
+      summary,
+      blockquote,
+      sub,
+      tfoot,
+      time,
+      pre,
+      sup,
+      thead,
+      mark,
+      a,
+      tt,
+      tr,
+      audio,
+      abbr,
+      var,
+      th,
+      video,
+      acronym,
+      b,
+      td,
+      address,
+      u,
+      article,
+      big,
+      i,
+      aside {
+        /* margin: 0; */
+        padding: 0;
+        border: 0;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article,
+      details,
+      figure,
+      header,
+      menu,
+      section,
+      aside,
+      figcaption,
+      footer,
+      hgroup,
+      nav {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      blockquote,
+      q {
+        quotes: none;
+      }
+      blockquote:before,
+      blockquote:after,
+      q:before,
+      q:after {
+        content: "";
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      /* END CSS Reset */
+
+      .group1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .group2 {
+        width: 100%;
+      }
+      .group3 {
+        width: 100%;
+      }
+
+      @media only screen and (min-width: 600px) {
+        .group1 {
+          width: 31%;
+        }
+        .group2 {
+          width: 50%;
+          padding-left: 14%;
+        }
+        .group3 {
+          width: 50%;
+          padding-left: 14%;
+        }
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+      .form-group {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body style="background: gray">
+    <main style="max-width: 1080px; width: 100%; margin: auto">
+      <header style="text-align: center">
+        <h1 id="title">Electrical Engineering Survey</h1>
+        <p id="description">a simple responsives survey page</p>
+      </header>
+
+      <form id="survey-form">
+        <div class="form-group" style="justify-content: space-evenly">
+          <div class="group1">
+            <label id="name-label" class="form-label" for="name"> Name: </label>
+            <input
+              id="name"
+              name="name"
+              class="form-input-text"
+              type="text"
+              placeholder="Enter your name"
+              required=""
+            />
+          </div>
+          <div class="group1">
+            <label id="email-label" class="form-label" for="email">
+              E-Mail:
+            </label>
+            <input
+              id="email"
+              name="email"
+              class="form-input-text"
+              type="email"
+              placeholder="Enter your email"
+              required=""
+            />
+          </div>
+          <div class="group1">
+            <label id="number-label" class="form-label" for="number">
+              Age:
+            </label>
+            <input
+              id="number"
+              name="number"
+              class="form-input-text"
+              type="number"
+              placeholder="(optional)"
+              min="18"
+              max="99"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p style="width: 100%; text-align: center">
+            What is your highest level of education? (Select one)
+          </p>
+          <label for="highschool" class="group3">
+            <input
+              id="highschool"
+              name="radio"
+              class="form-input"
+              type="radio"
+              value="highschool"
+              checked=""
+            />
+            High School Diploma
+          </label>
+          <label for="associate" class="group3">
+            <input
+              id="associate"
+              name="radio"
+              class="form-input"
+              type="radio"
+              value="associate"
+            />
+            AA/AS Degree
+          </label>
+          <label for="bachelor" class="group3">
+            <input
+              id="bachelor"
+              name="radio"
+              class="form-input"
+              type="radio"
+              value="bachelor"
+            />
+            Bachelor's Degree
+          </label>
+          <label for="master" class="group3">
+            <input
+              id="master"
+              name="radio"
+              class="form-input"
+              type="radio"
+              value="master"
+            />
+            Master's Degree
+          </label>
+        </div>
+        <div class="form-group">
+          <p style="width: 100%; display: block; text-align: center">
+            Which field(s) of electronics are you most interested in? (Select
+            all that apply)
+          </p>
+          <label for="power" class="group2">
+            <input
+              id="power"
+              name="checkbox"
+              class="form-input"
+              type="checkbox"
+              value="power"
+            />
+            Power Systems
+          </label>
+          <label for="microcomputer" class="group2">
+            <input
+              id="microcomputer"
+              name="checkbox"
+              class="form-input"
+              type="checkbox"
+              value="microcomputer"
+            />
+            Microcomputers
+          </label>
+          <label for="signal" class="group2">
+            <input
+              id="signal"
+              name="checkbox"
+              class="form-input"
+              type="checkbox"
+              value="signal"
+            />
+            Signal Processing
+          </label>
+          <label for="microcontroller" class="group2">
+            <input
+              id="microcontroller"
+              name="checkbox"
+              class="form-input"
+              type="checkbox"
+              value="microcontroller"
+            />
+            Microcontrollers
+          </label>
+        </div>
+        <div class="form-group" style="flex-direction: column">
+          <p style="width: 100%; text-align: center">
+            What is the maximum voltage output on your voltage supply?
+          </p>
+          <select
+            id="dropdown"
+            class="form-select"
+            name="powersupply"
+            style="width: 50%; margin: auto"
+          >
+            <option disabled="" selected="" value="">
+              == Choose a power supply voltage ==
+            </option>
+            <option class="form-option" value="3v">0 - 3.3</option>
+            <option class="form-option" value="5v">3.3 - 5</option>
+            <option class="form-option" value="9v">5 - 9</option>
+            <option class="form-option" value="12v">9 - 12</option>
+            <option class="form-option" value="16v">12 - 16</option>
+            <option class="form-option" value="24v">16 - 24</option>
+            <option class="form-option" value="48v">24 - 48</option>
+            <option class="form-option" value="96v">48 - 96</option>
+            <option class="form-option" value="120v">96 - 120</option>
+            <option class="form-option" value="240v">120 - 240</option>
+            <option class="form-option" value="400v">240 - 400</option>
+            <option class="form-option" value="1000v">400 - 1000</option>
+            <option class="form-option" value="10000v">1000 - 10000</option>
+            <option class="form-option" value="50000v">10000 - 50000</option>
+            <option class="form-option" value="50000v+">50000 +</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <p style="text-align: center">
+            Take a moment to describe what you love most about Electrical
+            Engineering.
+          </p>
+          <textarea
+            id="textarea"
+            name="textarea"
+            class="form-textarea"
+            placeholder="Enter text here..."
+            style="width: 100%"
+          ></textarea>
+        </div>
+        <hr />
+        <div class="form-group">
+          <button id="submit" name="submit" class="form-button">
+            <span>Submit</span>
+          </button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
