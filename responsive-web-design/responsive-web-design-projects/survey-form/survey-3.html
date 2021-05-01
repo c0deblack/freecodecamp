@@ -1,17 +1,17 @@
-<html style="height: 100%" lang="en"><head>
+<html style="height: 100%" lang="en">
+  <head>
     <title>Survey Page</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style tyle="text/css">
-    
       /*
       CSS RESET
 
         This is used to set all rules to default values.
 
     */
-    *,
+      *,
       *:before,
       *:after,
       *:hover {
@@ -142,7 +142,20 @@
         border-spacing: 0;
       }
       /* END CSS Reset */
-
+      html,
+      body,
+      input,
+      textarea,
+      select,
+      button {
+        background-color: hsla(0, 0%, 0%, 0);
+      }
+      input,
+      textarea,
+      select,
+      button {
+        color: white;
+      }
       body {
         line-height: 1;
         color: hsl(117, 100%, 70%);
@@ -226,7 +239,17 @@
   </head>
 
   <body>
-    <main style="max-width: 768px; width: 100%; margin: auto;border: 1px solid white;padding: 1em;border-radius: .7em;box-shadow: 0 0 5px 1px black;">
+    <main
+      style="
+        max-width: 768px;
+        width: 100%;
+        margin: auto;
+        border: 1px solid white;
+        padding: 1em;
+        border-radius: 0.7em;
+        box-shadow: 0 0 5px 1px black;
+      "
+    >
       <header style="text-align: center">
         <h1 id="title">Electrical Engineering Survey</h1>
         <p id="description">a simple responsive survey page</p>
@@ -236,19 +259,41 @@
         <div class="form-group" style="justify-content: space-evenly">
           <div class="group1">
             <label id="name-label" class="form-label" for="name"> Name: </label>
-            <input id="name" name="name" class="form-input-text" type="text" placeholder="Enter your name" required="">
+            <input
+              id="name"
+              name="name"
+              class="form-input-text"
+              type="text"
+              placeholder="Enter your name"
+              required=""
+            />
           </div>
           <div class="group1">
             <label id="email-label" class="form-label" for="email">
               E-Mail:
             </label>
-            <input id="email" name="email" class="form-input-text" type="email" placeholder="Enter your email" required="">
+            <input
+              id="email"
+              name="email"
+              class="form-input-text"
+              type="email"
+              placeholder="Enter your email"
+              required=""
+            />
           </div>
           <div class="group1">
             <label id="number-label" class="form-label" for="number">
               Age:
             </label>
-            <input id="number" name="number" class="form-input-text" type="number" placeholder="(optional)" min="18" max="99">
+            <input
+              id="number"
+              name="number"
+              class="form-input-text"
+              type="number"
+              placeholder="(optional)"
+              min="18"
+              max="99"
+            />
           </div>
         </div>
 
@@ -257,19 +302,44 @@
             What is your highest level of education? (Select one)
           </h2>
           <label for="highschool" class="group3">
-            <input id="highschool" name="radio" class="form-input" type="radio" value="highschool" checked="">
+            <input
+              id="highschool"
+              name="radio"
+              class="form-input"
+              type="radio"
+              value="highschool"
+              checked=""
+            />
             High School Diploma
           </label>
           <label for="associate" class="group3">
-            <input id="associate" name="radio" class="form-input" type="radio" value="associate">
+            <input
+              id="associate"
+              name="radio"
+              class="form-input"
+              type="radio"
+              value="associate"
+            />
             AA/AS Degree
           </label>
           <label for="bachelor" class="group3">
-            <input id="bachelor" name="radio" class="form-input" type="radio" value="bachelor">
+            <input
+              id="bachelor"
+              name="radio"
+              class="form-input"
+              type="radio"
+              value="bachelor"
+            />
             Bachelor's Degree
           </label>
           <label for="master" class="group3">
-            <input id="master" name="radio" class="form-input" type="radio" value="master">
+            <input
+              id="master"
+              name="radio"
+              class="form-input"
+              type="radio"
+              value="master"
+            />
             Master's Degree
           </label>
         </div>
@@ -279,19 +349,43 @@
             all that apply)
           </h2>
           <label for="power" class="group2">
-            <input id="power" name="checkbox" class="form-input" type="checkbox" value="power">
+            <input
+              id="power"
+              name="checkbox"
+              class="form-input"
+              type="checkbox"
+              value="power"
+            />
             Power Systems
           </label>
           <label for="microcomputer" class="group2">
-            <input id="microcomputer" name="checkbox" class="form-input" type="checkbox" value="microcomputer">
+            <input
+              id="microcomputer"
+              name="checkbox"
+              class="form-input"
+              type="checkbox"
+              value="microcomputer"
+            />
             Microcomputers
           </label>
           <label for="signal" class="group2">
-            <input id="signal" name="checkbox" class="form-input" type="checkbox" value="signal">
+            <input
+              id="signal"
+              name="checkbox"
+              class="form-input"
+              type="checkbox"
+              value="signal"
+            />
             Signal Processing
           </label>
           <label for="microcontroller" class="group2">
-            <input id="microcontroller" name="checkbox" class="form-input" type="checkbox" value="microcontroller">
+            <input
+              id="microcontroller"
+              name="checkbox"
+              class="form-input"
+              type="checkbox"
+              value="microcontroller"
+            />
             Microcontrollers
           </label>
         </div>
@@ -299,7 +393,12 @@
           <h2 style="width: 100%; text-align: center">
             What is the maximum voltage output on your voltage supply?
           </h2>
-          <select id="dropdown" class="form-select" name="powersupply" style="width: 50%; margin: auto">
+          <select
+            id="dropdown"
+            class="form-select"
+            name="powersupply"
+            style="width: 50%; margin: auto"
+          >
             <option disabled="" selected="" value="">
               == Choose a power supply voltage ==
             </option>
@@ -325,9 +424,15 @@
             Take a moment to describe what you love most about Electrical
             Engineering.
           </h2>
-          <textarea id="textarea" name="textarea" class="form-textarea" placeholder="Enter text here..." style="width: 100%"></textarea>
+          <textarea
+            id="textarea"
+            name="textarea"
+            class="form-textarea"
+            placeholder="Enter text here..."
+            style="width: 100%"
+          ></textarea>
         </div>
-        <hr>
+        <hr />
         <div class="form-group">
           <button id="submit" name="submit" class="form-button">
             <span>Submit</span>
@@ -335,6 +440,5 @@
         </div>
       </form>
     </main>
-  
-
-</body></html>
+  </body>
+</html>
