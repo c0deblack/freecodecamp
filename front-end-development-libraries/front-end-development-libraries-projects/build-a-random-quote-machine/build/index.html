@@ -1,0 +1,291 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Random Quote Machine</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"></link>
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"></link>
+ 
+ <!--
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+-->
+
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+ 
+ 
+<script>
+/*****************************
+** VARIABLES
+*****************************/
+let quotesObj = {};
+
+const colors = [
+  '#16a085',
+  '#27ae60',
+  '#2c3e50',
+  '#f39c12',
+  '#e74c3c',
+  '#9b59b6',
+  '#FB6964',
+  '#342224',
+  '#472E32',
+  '#BDBB99',
+  '#77B1A9',
+  '#73A857'
+];
+
+/*****************************
+** THE WRAPPER
+*****************************/
+$(`<div id="wrapper">`)
+  .addClass("container fluid")
+  .appendTo("body");
+
+/*****************************
+** THE HEADER
+*****************************/
+const title = $(`<h1>`)
+  .attr({
+    id: "title"
+  })
+  .text("Random Quote Generator")
+  .addClass("text-primary text-center py-3");
+
+$(`<header>)`)
+  .addClass("row")
+  .append(title)
+  .appendTo("#wrapper");
+
+/*****************************
+** THE MAIN CONTAINER
+*****************************/
+$(`<div>`)
+  .attr({
+    id: "main"
+  })
+  .addClass("row")
+  .appendTo("#wrapper");
+
+/*****************************
+** THE QUOTE BOX
+*****************************/
+$(`<div>`)
+  .attr({
+    id: "quote-box"
+  })
+  .css({
+  })
+  .addClass("")
+  .appendTo("#main");
+
+
+/*****************************
+** THE BLOCKQUOTE
+*****************************/
+
+let quoteText = $(`<p>`)
+  .attr({
+    id: "text"
+  })
+  .text("Placeholder Text!")
+  .addClass("py-3 text-center");
+
+let blockFooter = $(`<footer>`)
+  .attr({
+    id: "author"
+  })
+  .css({
+    textAlign: "right"
+  })
+  .text("Placeholder Author!")
+  .addClass("blockquote-footer py-2");
+
+$(`<blockquote>`)
+  .addClass("blockquote text-right mx-auto")
+  .css({
+    width: "75%"
+  })
+  .append(quoteText)
+  .append(blockFooter)
+  .appendTo("#quote-box");
+
+/*****************************
+** THE GENERATE BUTTON
+*****************************/
+$(`<div>`)
+  .attr({
+    id: "btn-wrapper"
+  })
+  .addClass("text-center py-3")
+  .appendTo("#quote-box");
+
+// add the new quote button
+$(`<button>`)
+  .attr({
+    id: "new-quote",
+    type: "submit",
+    onClick: "getQuote()"
+  })
+  .text("Generate New Quote!")
+  .addClass("btn btn-primary")
+  .appendTo("#btn-wrapper");
+
+
+/*****************************
+** THE TWEET BUTTON
+*****************************/
+const tweet = $(`<i>`)
+  .attr({
+    id: "tweet-icon"
+  })
+  .css({
+    textAlign: "center"
+  })
+  .addClass("bi bi-twitter");
+
+const tweetAnchor = $(`<a>`)
+  .attr({
+    id: "tweet-quote",
+    target: "_blank"
+  })
+  .addClass("row")
+  .append(tweet);
+
+$(`<div>`)
+  .attr({
+    id: "tweet-wrapper"
+  })
+  .addClass("")
+  .append(tweetAnchor)
+  .appendTo("#quote-box");
+
+/*****************************
+** THE FOOTER
+*****************************/
+const footerLogo = $(`<p>`)
+  .attr({
+    id: "footer-logo"
+  })
+  .css({
+    margin: 0
+  })
+  .addClass("text-left py-1")
+  .html("<em>&copy; c0deblack 2021</em>");
+
+$(`<footer>`)
+  .attr({
+    id: "footer"
+  })
+  .css({
+    backgroundColor: "hsl(217.1, 100%, 85.1%)",
+  })
+  .addClass("row")
+  .append(footerLogo)
+  .appendTo("#wrapper");
+
+/*****************************
+** THE COPYRIGHT
+*****************************/
+$(`<div>`)
+  .attr({
+    id: "copyright"
+  })
+  .addClass("text-left ")
+  .text("c0deblack")
+
+
+
+/*****************************
+** FUNCTIONS
+*****************************/
+
+
+/**
+ * Get a list of quotes from a remote server.
+ * Returns an object
+ */
+function getQuotes() {
+  return $.ajax({
+    headers: {
+      Accept: 'application/json'
+    },
+    url:
+      'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json',
+    success: function (jsonQuotes) {
+      if (typeof jsonQuotes === 'string') {
+        quotesObj = JSON.parse(jsonQuotes);
+        console.log('quotesData');
+        console.log(quotesObj);
+      }
+    },
+    complete: function (jqXHR, textStatus) {
+      //console.log(jqXHR);
+      console.log("Ajax request completed.")
+      console.log(textStatus);
+      //console.log(this);
+      if (textStatus == "success") {
+        getQuote();
+      }
+    }
+  });
+};
+
+/**
+ * Retrieve a single random quote
+ */
+function getRandomQuote() {
+  console.log("Getting random quote")
+  //console.log(quotesObj);
+  return quotesObj.quotes[
+    Math.floor(Math.random() * quotesObj.quotes.length)
+  ];
+}
+
+/**
+ * Change elements to show new quote
+ */
+function getQuote() {
+  let randomQuote = getRandomQuote();
+
+  currentQuote = randomQuote.quote;
+  currentAuthor = randomQuote.author;
+
+  $(`#tweet-quote`).attr(
+    'href',
+    'https://twitter.com/intent/tweet?hashtags=quotes&related=codejanka&text=' +
+      encodeURIComponent('"' + currentQuote + '" ' + currentAuthor)
+  );
+
+  // animate the transition between different quotes/authors
+  $(`#text`)
+    .add(`#author`)
+    .animate({
+      opacity: 0
+    },
+    500,
+    function () {
+      $('#text').text(currentQuote);
+      $('#author').text(currentAuthor);
+      $(this).animate({
+        opacity: 1
+      },
+      500)
+    });
+}
+
+$(function () {
+  getQuotes();
+});
+
+</script>
+</body>
+
+
+
+</html>
