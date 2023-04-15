@@ -198,20 +198,22 @@ function convertToRoman(num) {
   //console.log(num);
   let numLen = num.toString().length;
 
-  if (numLen == 0) {
-    return "";
-  } else {
-    let sigDigit = Math.floor(num / (10**(numLen-1)));
-    let numeral = romanNumerals[numLen][sigDigit];
-    //console.log(num);
-    //console.log(numLen);
-    //console.log(10**(numLen-1));
-    //console.log(sigDigit);
-    //console.log(numeral);
-    //return numeral + convertToRoman(num.toString().slice(1))
-    return sigDigit === 0 ? convertToRoman(num.toString().slice(1)) : numeral + convertToRoman(num.toString().slice(1))
+  if (numLen == 0){
+     return "";
   }
-}
 
+  let n = num / (Math.pow(10, numLen - 1));
+  let sigDigit = Math.floor( n );
+
+  let numeral = romanNumerals[numLen][sigDigit];
+
+  //console.log(num);
+  //console.log(numLen);
+  //console.log(10**(numLen-1));
+  //console.log(sigDigit);
+  //console.log(numeral);
+  //return numeral + convertToRoman(num.toString().slice(1))
+  return sigDigit === 0 ? convertToRoman(num.toString().slice(1)) : numeral + convertToRoman(num.toString().slice(1))
+}
 
 console.log(convertToRoman(1023));

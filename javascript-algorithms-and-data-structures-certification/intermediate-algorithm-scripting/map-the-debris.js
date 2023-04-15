@@ -73,24 +73,25 @@ function orbitalPeriod(arr) {
 }
 */
 
-function orbitalPeriod(arr) {
-  var GM = 398600.4418;
-  var earthRadius = 6367.4447;
+var GM = 398600.4418;
+var earthRadius = 6367.4447;
   
+function orbitalPeriod(arr) {
   return arr.map (obj => {
     let retObj = {};
     retObj.name = obj.name;
     retObj.orbitalPeriod = getPeriod(obj.avgAlt); 
     return retObj;
-  })
+  });
+}
+function getPeriod ( avgAlt, gm=GM, radius=earthRadius) {
 
-  function getPeriod (
-    avgAlt,
-    gm=GM,
-    radius=earthRadius)
-  {
-    return Math.round((2 * Math.PI * Math.sqrt((earthRadius+avgAlt)**3 / gm)))
-  }
+  let temp = earthRadius + avgAlt;
+  temp = (temp)**3 / gm;
+
+  return Math.round((2 * Math.PI * Math.sqrt(temp)));
 }
 
 console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
+
+

@@ -41,7 +41,6 @@ const ReactLogo = () => {
   const styles = {
     height: "6em"
   }
-
   return (
     <img style={styles} src={logo} className="App-logo" alt="logo" />
   )
